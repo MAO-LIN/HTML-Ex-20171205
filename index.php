@@ -73,10 +73,11 @@ session_start();
         <img src="Image/background2_reSize.jpg" width="100%">
         </div>
 </div>
-<div class="container" style="padding: 0;background-color: rgb(255,255,255);text-align: left">
-    <p><a href="index.php">首頁</a></p>
-</div>
+<!--<div class="container" style="padding: 0;background-color: rgb(255,255,255);text-align: left">-->
+<!--    <p><a href="index.php">首頁</a></p>-->
+<!--</div>-->
 <div class="container bg-3 text-center" style="background-color: rgb(228,228,228)">
+    <p style="text-align: left"><a href="index.php">首頁</a></p>
     <br>
     <div class="row">
         <div class="col-sm-8">
