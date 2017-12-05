@@ -6,7 +6,6 @@
  * Time: 上午 06:38
  */
 session_start();
-//include("connect.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +16,8 @@ session_start();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/new_test.css">
+    <link rel="stylesheet" href="css/news_test.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/cwtexyen.css">
     <style>
         /* Remove the navbar's default margin-bottom and rounded borders */
         .navbar {
@@ -33,7 +33,7 @@ session_start();
     </style>
 </head>
 <body>
-
+<a id="top"></a>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -68,23 +68,21 @@ session_start();
         </div>
     </div>
 </nav>
-<div class="jumbotron">
-    <div class="container text-center">
-        <h1>My Portfolio</h1>
-        <p>Some text that represents "Me"...</p>
-    </div>
+<div class="container text-center" style="padding: 0">
+        <div style="max-height:400px ;overflow: hidden">
+        <img src="Image/background2_reSize.jpg" width="100%">
+        </div>
 </div>
-
-<div class="container-fluid bg-3 text-center" style="margin:10px 50px">
+<div class="container" style="padding: 0;background-color: rgb(255,255,255);text-align: left">
+    <p><a href="index.php">首頁</a></p>
+</div>
+<div class="container bg-3 text-center" style="background-color: rgb(228,228,228)">
     <br>
     <div class="row">
-        <!--<div class="col-sm-1"></div>-->
         <div class="col-sm-8">
             <div>
                 <h1>王經篤(Jing-Doo Wang)</h1>
                 <h2>亞洲大學 資訊工程系 副教授</h2>
-                <br>
-                <br>
                 <br>
                 <h3>學歷： 國立中正大學資訊工程博士</h3>
                 <h3>辦公室： I517</h3>
@@ -109,22 +107,24 @@ session_start();
             </div>
         </div>
         <div class="col-sm-4">
-            <div class="row">
-                <div class="col-sm-12" id="menu">
-                    <p style="text-align: left">Profile</p>
-                    <img src="Image/jdwang.jpg"  style="width:50%; max-width:150px; max-height:150px; border-radius:50%" alt="Image">
-                    <ul style="margin:30px 30px 30px 30px">
-                        <li><a href="http://dns2.asia.edu.tw/~jdwang/Experience.htm">學經歷</a></li>
-                        <li><a href="http://dns2.asia.edu.tw/~jdwang/Experience.htm">研究與專長</a></li>
-                        <li><a href="http://dns2.asia.edu.tw/~jdwang/Experience.htm">研究計畫</a></li>
-                        <li><a href="http://dns2.asia.edu.tw/~jdwang/Experience.htm">教授課程</a></li>
-                    </ul>
-                </div>
+            <div id="menu">
+                <p style="text-align: left">Profile</p>
+                <img src="Image/jdwang.jpg"  style="width:50%; max-width:150px; max-height:150px; border-radius:50%" alt="Image">
+                <ul style="margin:10px 10px 10px 10px">
+                    <li><a href="http://dns2.asia.edu.tw/~jdwang/Experience.htm">學經歷</a></li>
+                    <li><a href="http://dns2.asia.edu.tw/~jdwang/Experience.htm">研究與專長</a></li>
+                    <li><a href="http://dns2.asia.edu.tw/~jdwang/Experience.htm">研究計畫</a></li>
+                    <li><a href="http://dns2.asia.edu.tw/~jdwang/Experience.htm">教授課程</a></li>
+                </ul>
             </div>
         </div>
         <!--<div class="col-sm-1"></div>-->
     </div>
-</div><br>
+    <br>
+</div>
+<div class="container text-center" style="background-color: rgb(255,255,255)">
+    <p><a href="#top">點我回頂端</a></p>
+</div>
 
 <!--<div class="container-fluid bg-3 text-center">-->
 <!--<div class="row">-->
@@ -147,10 +147,6 @@ session_start();
 <!--</div>-->
 <!--<div class="container-fluid text-center"> </div>-->
 <!--</div><br><br>-->
-
-<footer class="container-fluid text-center">
-    <p>Footer Text</p>
-</footer>
 
 </body>
 </html>
