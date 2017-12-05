@@ -1,0 +1,24 @@
+*{
+    margin:0;
+    padding:0;
+}
+#warp{
+    max-width:900px;
+    margin:0 auto auto auto;
+    background-color: rgb(191, 182, 255);
+}
+.titleMenu{
+    position: fixed;
+    top:0;
+    margin-left:0;
+    height:6%;
+    width:100%;
+    font-size:1.1em;
+    z-index: 2;
+    display:block;
+    background-color: rgb(255, 215, 127);
+}
+a{
+    text-decoration: none;
+    /*text-decoration-color: ;*/
+}

@@ -1,0 +1,85 @@
+*{
+    margin:0;
+    padding:0;
+}
+#warp{
+    max-width:900px;
+    margin:0 auto auto auto;
+    background-color: rgb(191, 182, 255);
+}
+.titleMenu{
+    position: fixed;
+    top:0;
+    margin-left:0;
+    height:6%;
+    width:100%;
+    font-size:1.1em;
+    z-index: 2;
+    display:block;
+    background-color: rgb(255, 215, 127);
+}
+a{
+    text-decoration: none;
+    /*text-decoration-color: ;*/
+}
+#footer{
+    text-align: center;
+    font-size: 1.2em;
+    background-color: rgb(255, 215, 127);
+
+}
+#container{
+    background-color: rgb(255, 215, 127);
+}
+.circle{
+
+}
+#menuBar{
+    background-color: rgb(97, 151, 255)
+}
+#menuBar ul{
+    list-style:none;
+}
+#menuBar ul li{
+    display:inline-block;
+    /*background-color: rgb(241, 2, 255);*/
+    padding:10px;
+
+
+}
+#menuBar ul li:hover{
+    background-color: rgb(90, 104, 201);
+    border-bottom: solid;
+    border-width:3px;
+}
+#menuBar a {
+    color: white;
+    font-size: 1.3em;
+}
+#menu ul li {
+    list-style-type: none;
+    border-bottom: solid;
+    border-bottom-color: darkgray;
+    border-width:1px;
+    padding:10px 10px 10px 10px;
+    margin:5px 5px 5px 5px;
+}
+#menu ul li a{
+    color: rgb(133, 96, 22);
+}
+#menu ul li a:hover{
+    color: rgb(205, 121, 34);
+}
+#menu ul li::before{
+    content:":: ";
+}
+.circle{
+    border-radius:50%;
+}
+#containtext h3{
+    font-size: 0.8em;
+}
+.bgcolor{
+    background-color: #0a4a3d;
+    color: #ffffff;
+}

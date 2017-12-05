@@ -1,0 +1,56 @@
+#footer{
+    text-align: center;
+    font-size: 1.2em;
+}
+.bg-5{
+    background-color: #33cc99;
+    color: #ffffff;
+}
+a{
+    text-decoration: none;
+    /*text-decoration-color: ;*/
+}
+#menuBar{
+    background-color: rgb(97, 151, 255)
+}
+#menuBar ul{
+    list-style:none;
+}
+#menuBar ul li{
+    display:inline-block;
+    /*background-color: rgb(241, 2, 255);*/
+    padding:10px;
+
+
+}
+#menuBar ul li:hover{
+    background-color: rgb(90, 104, 201);
+    border-bottom: solid;
+    border-width:3px;
+}
+#menuBar a {
+    color: white;
+    font-size: 1.3em;
+}
+#menu ul li {
+    list-style-type: none;
+    border-width: 1px;
+    border-bottom: solid darkgray;
+    padding:10px 10px 10px 10px;
+    margin:5px 5px 5px 5px;
+}
+#menu ul li a{
+    color: rgb(133, 96, 22);
+}
+#menu ul li a:hover{
+    color: rgb(205, 121, 34);
+}
+#menu ul li::before{
+    content:":: ";
+}
+.circle{
+    border-radius:50%;
+}
+#containtext h3{
+    font-size: 0.8em;
+}
