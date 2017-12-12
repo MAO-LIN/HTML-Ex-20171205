@@ -1,10 +1,11 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Saber
- * Date: 2017/11/29
- * Time: 上午 06:38
+ * User: USER
+ * Date: 2017/12/6
+ * Time: 上午 10:50
  */
+
 session_start();
 include ("function.php");
 ?>
@@ -46,16 +47,8 @@ include ("function.php");
             <a><img src="Image/Asia_Logo.jpg" style="width:3.7em;padding: 0;margin: 0;" ></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
-<!--            <ul class="nav navbar-nav">-->
-<!--                <li class="active"><a href="#">首頁</a></li>-->
-<!--                <li><a href="#">簡歷</a></li>-->
-<!--                <li><a href="#">學術</a></li>-->
-<!--                <li><a href="#">著作</a></li>-->
-<!--                <li><a href="#">學生</a></li>-->
-<!--                <li><a href="#">常用連結</a></li>-->
-<!--            </ul>-->
             <?php
-                varbar(1);
+            varbar(4);
             ?>
             <ul class="nav navbar-nav navbar-right">
                 <?php
@@ -73,42 +66,24 @@ include ("function.php");
     </div>
 </nav>
 <div class="container text-center" style="padding: 0">
-        <div style="max-height:400px ;overflow: hidden">
+    <div style="max-height:400px ;overflow: hidden">
         <img src="Image/background2_reSize.jpg" width="100%">
-        </div>
+    </div>
 </div>
 <!--<div class="container" style="padding: 0;background-color: rgb(255,255,255);text-align: left">-->
 <!--    <p><a href="index.php">首頁</a></p>-->
 <!--</div>-->
 <div class="container bg-3 text-center" style="background-color: rgb(228,228,228)">
-    <p style="text-align: left"><a href="index.php">首頁</a></p>
+    <div>
+    <span style="float: left"><a href="index.php">首頁</a></span>
+    <span style="float: left;padding-left: 3px;padding-right: 3px"> > </span>
+    <span style="float: left;"><a href="writing.php">著作</a></span>
+    </div>
     <br>
     <div class="row">
         <div class="col-sm-8">
             <div>
-                <h1>王經篤(Jing-Doo Wang)</h1>
-                <h2>亞洲大學 資訊工程系 副教授</h2>
-                <br>
-                <h3>學歷： 國立中正大學資訊工程博士</h3>
-                <h3>辦公室： I517</h3>
-                <h3>分機： 1847</h3>
-                <h3>E-mail： jdwang@asia.edu.tw</h3>
-                <h3>研究領域：</h3>
-                <h3>雲端計算 、文件資訊擷取 、網路資訊擷取 、生物資訊</h3>
-                <?php
-                if($_SESSION['id']==null) {
-                    echo"<h2><a href='login.html'>Login</a></h2>";
-                }
-                else{
-                    echo  $_SESSION['id'] ;
-                    echo"<h2><a href='logout.php'>Logout</a></h2>";
-                }
-                if($_SESSION['id']!=null) {
-                    echo $_SESSION['id'];
-                }else{
-                    echo "no SESSION";
-                }
-                ?>
+
             </div>
         </div>
         <div class="col-sm-4">
