@@ -17,7 +17,7 @@ include ("function.php");
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/news_test.css">
+    <link rel="stylesheet" href="css/newstest.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/cwtexyen.css">
     <style>
         /* Remove the navbar's default margin-bottom and rounded borders */
@@ -36,14 +36,14 @@ include ("function.php");
 <body>
 <a id="top"></a>
 <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
+    <div class="container-fluid" style="max-width: 1200px">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a><img src="Image/Asia_Logo.jpg" style="width:3.7em;padding: 0;margin: 0;" ></a>
+            <a><img src="Image/Asiaa_Logo.png" style="width:3.7em;padding: 0;margin: 0;" ></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
 <!--            <ul class="nav navbar-nav">-->
@@ -95,20 +95,20 @@ include ("function.php");
                 <h3>E-mail： jdwang@asia.edu.tw</h3>
                 <h3>研究領域：</h3>
                 <h3>雲端計算 、文件資訊擷取 、網路資訊擷取 、生物資訊</h3>
-                <?php
-                if($_SESSION['id']==null) {
-                    echo"<h2><a href='login.html'>Login</a></h2>";
-                }
-                else{
-                    echo  $_SESSION['id'] ;
-                    echo"<h2><a href='logout.php'>Logout</a></h2>";
-                }
-                if($_SESSION['id']!=null) {
-                    echo $_SESSION['id'];
-                }else{
-                    echo "no SESSION";
-                }
-                ?>
+<!--                --><?php
+//                if($_SESSION['id']==null) {
+//                    echo"<h2><a href='login.html'>Login</a></h2>";
+//                }
+//                else{
+//                    echo  $_SESSION['id'] ;
+//                    echo"<h2><a href='logout.php'>Logout</a></h2>";
+//                }
+//                if($_SESSION['id']!=null) {
+//                    echo $_SESSION['id'];
+//                }else{
+//                    echo "no SESSION";
+//                }
+//                ?>
             </div>
         </div>
         <div class="col-sm-4">

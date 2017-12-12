@@ -15,12 +15,12 @@ $row=mysqli_fetch_row($result);
 if($id!=null&&$pw!=null&&$row[0]==$id&&$row[2]==$pw){
     $_SESSION['id'] = $id;
     echo'Login successfully'. '<br>';
-    echo $_SESSION['id']. '<br>';
-    echo $id. '<br>';
-    echo $pw. '<br>';
+//    echo $_SESSION['id']. '<br>';
+//    echo $id. '<br>';
+//    echo $pw. '<br>';
     echo '<meta http-equiv=REFRESH CONTENT=3;url=index.php>';
 }
 else{
     echo'Login failed';
-//    echo '<meta http-equiv=REFRESH CONTENT=3;url=login.html>';
+    echo '<meta http-equiv=REFRESH CONTENT=3;url=login.html>';
 }
