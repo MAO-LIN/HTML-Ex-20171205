@@ -60,15 +60,13 @@ include ("function.php");
             <ul class="nav navbar-nav navbar-right">
                 <?php
                 if($_SESSION['id']!=null) {
-                    echo" <li><a href='logout.php'><span class='glyphicon glyphicon-log-out'></span> Logout</a></li>";
+                    echo " <li><a href='logout.php'><span class='glyphicon glyphicon-log-out'></span>Logout</a></li>";
                 }
                 else{
-                    echo"<li><a href='login.html'><span class='glyphicon glyphicon-log-in'></span> Login</a></li>";
+                    echo " <li><a href='login.html'><span class='glyphicon glyphicon-log-in'></span>Login</a></li>";
                 }
                 ?>
-
             </ul>
-
         </div>
     </div>
 </nav>
@@ -109,6 +107,16 @@ include ("function.php");
 //                    echo "no SESSION";
 //                }
 //                ?>
+
+<!--                <button onclick="aa()" class="btn btn-primary btn-md">點我阿</button>-->
+<!--                <script>-->
+<!--                    function aa() {-->
+<!--                        var hello=window.prompt("aa");-->
+<!--                        document.createElement("標籤")-->
+<!--                  document.write(hello);-->
+<!---->
+<!--                    }-->
+<!--               </script>-->
             </div>
         </div>
         <div class="col-sm-4">
@@ -127,7 +135,7 @@ include ("function.php");
     </div>
     <br>
 </div>
-<div class="container text-center" style="background-color: rgb(255,255,255)">
+<div class="container text-center" id="footer" style="background-color: rgb(255,255,255)">
     <p><a href="#top">點我回頂端</a></p>
 </div>
 
