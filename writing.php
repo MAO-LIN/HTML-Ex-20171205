@@ -198,7 +198,7 @@ include ("function.php");
     </div>
     <br>
 </div>
-<div class="container text-center" style="background-color: rgb(255,255,255)">
+<div class="container text-center" style="background-color: rgb(255,255,255);font-size: 1.4em">
     <p><a href="#top">點我回頂端</a></p>
 </div>
 
