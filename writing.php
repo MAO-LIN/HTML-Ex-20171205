@@ -132,7 +132,7 @@ include ("function.php");
                                 <form action="writing_add.php" method="POST">
                                     <div class="form-group">
                                         <label for="name">論文名稱:</label>
-                                        <input type="text" class="form-control" id="name">
+                                        <input type="text" class="form-control" id="name" name="name">
                                     </div>
                                     <div class="form-group">
                                         <label for="author">作者:</label>
@@ -198,7 +198,11 @@ include ("function.php");
     </div>
     <br>
 </div>
+<<<<<<< HEAD
 <div class="container text-center" style="background-color: rgb(255,255,255);font-size: 1.4em">
+=======
+<div class="container text-center" id="footer" style="background-color: rgb(255,255,255)">
+>>>>>>> b84a7f648155015c7da3faac3af1f3b826470206
     <p><a href="#top">點我回頂端</a></p>
 </div>
 
