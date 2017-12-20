@@ -1,8 +1,9 @@
 
 #footer{
     text-align: center;
-    font-size: 1em;
+    font-size: 1.5em;
     height:70px;
+    /*background-color: rgba(98, 98, 98, 0.69);*/
 }
 .bg-5{
     background-color: #33cc99;
@@ -80,4 +81,12 @@ body{
     border-top:1px solid #e7e6e6;
     border-bottom:1px solid #e7e6e6;
     /*font-size:12px*/
+}
+#labStyle{
+    font-size: 1.3em;
+}
+.borderStyle{
+    border-bottom: solid;
+    border-width:2px;
+    border-color:rgb(147,147,147);
 }

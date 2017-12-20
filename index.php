@@ -121,7 +121,10 @@ include ("function.php");
         </div>
         <div class="col-sm-4">
             <div id="menu">
+                <div style="border-bottom: solid;border-width:1.2px;border-color:rgb(147,147,147);">
                 <p style="text-align: left">Profile</p>
+                </div>
+                <br/>
                 <img src="Image/jdwang.jpg"  style="width:50%; max-width:150px; max-height:150px; border-radius:50%" alt="Image">
                 <ul style="margin:10px 10px 10px 10px">
                     <li><a href="http://dns2.asia.edu.tw/~jdwang/Experience.htm">學經歷</a></li>

@@ -74,12 +74,10 @@ include ("function.php");
 <!--    <p><a href="index.php">首頁</a></p>-->
 <!--</div>-->
 <div class="container bg-3 text-center" style="background-color: rgb(228,228,228)">
-    <div>
     <span style="float: left"><a href="index.php">首頁</a></span>
     <span style="float: left;padding-left: 3px;padding-right: 3px"> > </span>
     <span style="float: left;"><a href="writing.php">著作</a></span>
-    </div>
-    <br>
+    <br/>
     <div class="row">
         <div class="col-sm-8">
                     <ul class="nav nav-tabs">
@@ -184,7 +182,10 @@ include ("function.php");
         </div>
         <div class="col-sm-4">
             <div id="menu">
+                <div style="border-bottom: solid;border-width:1.2px;border-color:rgb(147,147,147);">
                 <p style="text-align: left">Profile</p>
+                </div>
+                <br/>
                 <img src="Image/jdwang.jpg"  style="width:50%; max-width:150px; max-height:150px; border-radius:50%" alt="Image">
                 <ul style="margin:10px 10px 10px 10px">
                     <li><a href="http://dns2.asia.edu.tw/~jdwang/Experience.htm">學經歷</a></li>
@@ -198,11 +199,8 @@ include ("function.php");
     </div>
     <br>
 </div>
-<<<<<<< HEAD
-<div class="container text-center" style="background-color: rgb(255,255,255);font-size: 1.4em">
-=======
+<!--<div class="container text-center" style="background-color: rgb(255,255,255);font-size: 1.4em">-->
 <div class="container text-center" id="footer" style="background-color: rgb(255,255,255)">
->>>>>>> b84a7f648155015c7da3faac3af1f3b826470206
     <p><a href="#top">點我回頂端</a></p>
 </div>
 
