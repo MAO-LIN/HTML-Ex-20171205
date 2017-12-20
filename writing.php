@@ -108,8 +108,8 @@ include ("function.php");
                             for($i=0;$i<$total;$i++){
                                 $row=mysqli_fetch_row($result);
                                 echo "<h3 style=\"font-size:0.4em ;text-align: left\">".($i+1)."</h3>" ;
-                                echo "<h3 style=\"font-size:0.4em ;text-align: left; border-bottom: solid;\">".$row[1]."</h3>";
-                                echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[2].",".$row[6].",".$row[4].",".$row[5].",".$row[7].",".$row[8]."</h3>";
+                                echo "<h3 style=\"font-size:1em;font-weight:bold;text-align: left; border-bottom: solid;\">".$row[1]."</h3>";
+                                echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[2].",".$row[6].",".$row[4].",".$row[5].",".$row[7].",".$row[8].",".$row[10]."</h3>";
                                 echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[3]."</h3>";
                                 echo "<br>";
                             }
@@ -134,44 +134,41 @@ include ("function.php");
                                     </div>
                                     <div class="form-group">
                                         <label for="author">作者:</label>
-                                        <input type="text" class="form-control" id="author">
+                                        <input type="text" class="form-control" id="author"  name="author">
                                     </div>
                                     <div class="form-group">
                                         <label for="enterprise">單位:</label>
-                                        <input type="text" class="form-control" id="enterprise">
+                                        <input type="text" class="form-control" id="enterprise" name="enterprise">
                                     </div>
                                     <div class="form-group">
                                         <label for="vol">Vol:</label>
-                                        <input type="text" class="form-control" id="vol">
+                                        <input type="text" class="form-control" id="vol" name="vol">
                                     </div>
                                     <div class="form-group">
                                         <label for="no">No:</label>
-                                        <input type="text" class="form-control" id="no">
+                                        <input type="text" class="form-control" id="no" name="no">
                                     </div>
                                     <div class="form-group">
                                         <label for="page">頁數:</label>
-                                        <input type="text" class="form-control" id="page">
+                                        <input type="text" class="form-control" id="page" name="page">
                                     </div>
                                     <div class="form-group">
                                         <label for="date">日期:</label>
-                                        <input type="text" class="form-control" id="date">
+                                        <input type="text" class="form-control" id="date" name="date">
                                     </div>
                                     <div class="form-group">
                                         <label for="runNumber">流水號:</label>
-                                        <input type="text" class="form-control" id="runNumber">
+                                        <input type="text" class="form-control" id="runNumber" name="runNumber">
                                     </div>
-                                    <!--                        <div class="form-group">-->
-                                    <!--                            <label for="style">style</label>-->
-                                    <!--                            <input type="password" class="form-control" id="pwd">-->
-                                    <!--                        </div>-->
-                                    <!--                                <div class="form-group">-->
-                                    <!--                                <label for="style">style</label>-->
-                                    <!--                                <select class="form-control" id="style">-->
-                                    <!--                                    <option value="1">Journal</option>-->
-                                    <!--                                    <option value="2">International Conference</option>-->
-                                    <!--                                    <option value="3">Domestic Conference</option>-->
-                                    <!--                                </select>-->
-                                    <!--                                </div>-->
+
+                                    <div class="form-group">
+                                        <label for="style">style</label>
+                                        <select class="form-control" id="style" name="style">
+                                            <option value="1">Journal</option>
+                                            <option value="2">International Conference</option>
+                                            <option value="3">Domestic Conference</option>
+                                        </select>
+                                    </div>
                                     <button type="submit" class="btn btn-primary btn-md">新增</button>
                                 </form>
                             </div>

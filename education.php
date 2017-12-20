@@ -7,6 +7,7 @@
  */
 session_start();
 include ("function.php");
+include ("menufunction.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -209,28 +210,10 @@ include ("function.php");
             </div>
         </div>
         <div class="col-sm-4">
-            <div id="menu">
-<!--                <div class="borderStyle">-->
-                    <p style="text-align: left">Profile</p>
-<!--                </div>-->
-                <div style="margin:10px 10px 10px 10px">
-                     <img src="Image/jdwang.jpg"  style="width:50%; max-width:150px; max-height:150px; border-radius:50%" alt="Image">
-                </div>
-                <ul style="margin:10px 10px 10px 10px">
-                    <li><a href="http://dns2.asia.edu.tw/~jdwang/Experience.htm">學經歷</a></li>
-                    <li><a href="http://dns2.asia.edu.tw/~jdwang/Experience.htm">研究與專長</a></li>
-                    <li><a href="http://dns2.asia.edu.tw/~jdwang/Experience.htm">研究計畫</a></li>
-                    <li><a href="http://dns2.asia.edu.tw/~jdwang/Experience.htm">教授課程</a></li>
-                </ul>
-<!--                <div class="borderStyle">-->
-                    <p style="text-align: left">QRcode</p>
-<!--                </div>-->
-                <div style="margin: 10px 10px 10px 10px">
-                <img src="Image/htmlQR.jpg" style="width:50%;max-width:200px;">
-                </div>
-            </div>
+            <?php
+                Rightmenu();
+            ?>
         </div>
-        <!--<div class="col-sm-1"></div>-->
     </div>
     <br>
 </div>
