@@ -8,6 +8,7 @@
 
 session_start();
 include ("function.php");
+include ("menufunction.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +37,7 @@ include ("function.php");
 </head>
 <body>
 <a id="top"></a>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse container" style="max-width: 1170px">
     <div class="container-fluid" style="max-width: 1200px">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -178,26 +179,16 @@ include ("function.php");
                     </div>
         </div>
         <div class="col-sm-4">
-            <div id="menu">
-                <div style="border-bottom: solid;border-width:1.2px;border-color:rgb(147,147,147);">
-                <p style="text-align: left">Profile</p>
-                </div>
-                <br/>
-                <img src="Image/jdwang.jpg"  style="width:50%; max-width:150px; max-height:150px; border-radius:50%" alt="Image">
-                <ul style="margin:10px 10px 10px 10px">
-                    <li><a href="http://dns2.asia.edu.tw/~jdwang/Experience.htm">學經歷</a></li>
-                    <li><a href="http://dns2.asia.edu.tw/~jdwang/Experience.htm">研究與專長</a></li>
-                    <li><a href="http://dns2.asia.edu.tw/~jdwang/Experience.htm">研究計畫</a></li>
-                    <li><a href="http://dns2.asia.edu.tw/~jdwang/Experience.htm">教授課程</a></li>
-                </ul>
-            </div>
+            <?php
+            Rightmenu();
+            ?>
         </div>
         <!--<div class="col-sm-1"></div>-->
     </div>
     <br>
 </div>
 <!--<div class="container text-center" style="background-color: rgb(255,255,255);font-size: 1.4em">-->
-<div class="container text-center" id="footer" style="background-color: rgb(255,255,255)">
+<div class="container text-center" id="footer">
     <p><a href="#top">點我回頂端</a></p>
 </div>
 

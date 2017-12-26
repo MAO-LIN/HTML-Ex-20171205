@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: Saber
- * Date: 2017/11/29
- * Time: 上午 06:38
+ * Date: 2017/12/26
+ * Time: 下午 09:26
  */
 session_start();
 include ("function.php");
@@ -47,16 +47,8 @@ include ("menufunction.php");
             <a><img src="Image/Asiaa_Logo.png" style="width:3.7em;padding: 0;margin: 0;" ></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
-<!--            <ul class="nav navbar-nav">-->
-<!--                <li class="active"><a href="#">首頁</a></li>-->
-<!--                <li><a href="#">簡歷</a></li>-->
-<!--                <li><a href="#">學術</a></li>-->
-<!--                <li><a href="#">著作</a></li>-->
-<!--                <li><a href="#">學生</a></li>-->
-<!--                <li><a href="#">常用連結</a></li>-->
-<!--            </ul>-->
             <?php
-                varbar(1);
+            varbar(6);
             ?>
             <ul class="nav navbar-nav navbar-right">
                 <?php
@@ -72,55 +64,82 @@ include ("menufunction.php");
     </div>
 </nav>
 <div class="container text-center" style="padding: 0">
-        <div style="max-height:400px ;overflow: hidden">
+    <div style="max-height:400px ;overflow: hidden">
         <img src="Image/background2_reSize.jpg" width="100%">
-        </div>
+    </div>
 </div>
 <!--<div class="container" style="padding: 0;background-color: rgb(255,255,255);text-align: left">-->
 <!--    <p><a href="index.php">首頁</a></p>-->
 <!--</div>-->
 <?php
-    centerTitle(1);
+centerTitle(6);
 ?>
 <div class="container bg-3 text-center" style="background-color: rgb(228,228,228)">
     <p style="text-align: left"><a href="index.php">首頁</a></p>
-<!--    <br>-->
+    <br>
     <div class="row">
         <div class="col-sm-8">
             <div>
-                <h1>王經篤(Jing-Doo Wang)</h1>
-                <h2>亞洲大學 資訊工程系 副教授</h2>
-                <br>
-                <h3>學歷： 國立中正大學資訊工程博士</h3>
-                <h3>辦公室： I517</h3>
-                <h3>分機： 1847</h3>
-                <h3>E-mail： jdwang@asia.edu.tw</h3>
-                <h3>研究領域：</h3>
-                <h3>雲端計算 、文件資訊擷取 、網路資訊擷取 、生物資訊</h3>
-<!--                --><?php
-//                if($_SESSION['id']==null) {
-//                    echo"<h2><a href='login.html'>Login</a></h2>";
-//                }
-//                else{
-//                    echo  $_SESSION['id'] ;
-//                    echo"<h2><a href='logout.php'>Logout</a></h2>";
-//                }
-//                if($_SESSION['id']!=null) {
-//                    echo $_SESSION['id'];
-//                }else{
-//                    echo "no SESSION";
-//                }
-//                ?>
-
-<!--                <button onclick="aa()" class="btn btn-primary btn-md">點我阿</button>-->
-<!--                <script>-->
-<!--                    function aa() {-->
-<!--                        var hello=window.prompt("aa");-->
-<!--                        document.createElement("標籤")-->
-<!--                  document.write(hello);-->
-<!---->
-<!--                    }-->
-<!--               </script>-->
+                <table class="table table-bordered">
+<!--                    <thead>-->
+<!--                    <tr>-->
+<!--                        <th style="background-color:#6163ff"> English Learning</th>-->
+<!--                    </tr>-->
+<!--                    </thead>-->
+                    <tbody>
+                    <tr>
+                        <th style="background-color:#be6240"> English Learning</th>
+                    </tr>
+                    <tr>
+                        <td><a href="https://www.liveabc.com/site/Online_Store/member/ok3.asp">LiveABC</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://mws.ust.hk/mw/account/login.php">My Words</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://wordneighbors.ust.hk/">Word Neighbors</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://egg.ust.hk/cl3/index.html">EGG ( English Grammar Guide)</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://www.ted.com/">TED (Technology, Entertainment, Design)</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://quod.lib.umich.edu/m/micase/">MICASE (Michigan Corpus of Academic Spoken English)</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://www.pbs.org/">PBS (Public Broadcasting Service)</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://hk.dictionary.yahoo.com/">Yahoo!字典</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://www.netspeak.org/">netspeak</a></td>
+                    </tr>
+                    <tr>
+                        <th style="background-color:#8bb9b0"> 其他連結</th>
+                    </tr>
+                    <tr>
+                        <td><a href="http://data.gov.tw/">政府資料開法平台</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://www.internationalgenome.org/">The 1000 genomes project</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="ftp://ftp.ncbi.nih.gov/genomes/Viruses/">Viruses FTP</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://ictvdb.cumc.columbia.edu/">ICTVdB:The Universal Database of the International Committee on Taxonomy of Viruses</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=advisors">Contributors to the GenBank Taxonomy Database</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://talk.ictvonline.org/files/ictv_documents/m/msl/1231/download.aspx">ICTV Master Species List 2009 - Version 7</a></td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="col-sm-4">
@@ -160,4 +179,3 @@ include ("menufunction.php");
 
 </body>
 </html>
-

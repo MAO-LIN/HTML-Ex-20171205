@@ -36,7 +36,7 @@ include ("menufunction.php");
 </head>
 <body>
 <a id="top"></a>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse container" style="max-width: 1170px">
     <div class="container-fluid" style="max-width: 1200px">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -218,7 +218,7 @@ include ("menufunction.php");
     <br>
 </div>
 <!--<div class="container text-center" style="background-color: rgb(255,255,255);font-size: 1.4em">-->
-    <div class="container text-center" id="footer" style="background-color: rgb(255,255,255)">
+    <div class="container text-center" id="footer">
         <p><a href="#top">點我回頂端</a></p>
     </div>
 

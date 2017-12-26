@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: Saber
- * Date: 2017/11/29
- * Time: 上午 06:38
+ * Date: 2017/12/26
+ * Time: 下午 11:57
  */
 session_start();
 include ("function.php");
@@ -47,16 +47,16 @@ include ("menufunction.php");
             <a><img src="Image/Asiaa_Logo.png" style="width:3.7em;padding: 0;margin: 0;" ></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
-<!--            <ul class="nav navbar-nav">-->
-<!--                <li class="active"><a href="#">首頁</a></li>-->
-<!--                <li><a href="#">簡歷</a></li>-->
-<!--                <li><a href="#">學術</a></li>-->
-<!--                <li><a href="#">著作</a></li>-->
-<!--                <li><a href="#">學生</a></li>-->
-<!--                <li><a href="#">常用連結</a></li>-->
-<!--            </ul>-->
+            <!--            <ul class="nav navbar-nav">-->
+            <!--                <li class="active"><a href="#">首頁</a></li>-->
+            <!--                <li><a href="#">簡歷</a></li>-->
+            <!--                <li><a href="#">學術</a></li>-->
+            <!--                <li><a href="#">著作</a></li>-->
+            <!--                <li><a href="#">學生</a></li>-->
+            <!--                <li><a href="#">常用連結</a></li>-->
+            <!--            </ul>-->
             <?php
-                varbar(1);
+            varbar(3);
             ?>
             <ul class="nav navbar-nav navbar-right">
                 <?php
@@ -72,55 +72,76 @@ include ("menufunction.php");
     </div>
 </nav>
 <div class="container text-center" style="padding: 0">
-        <div style="max-height:400px ;overflow: hidden">
+    <div style="max-height:400px ;overflow: hidden">
         <img src="Image/background2_reSize.jpg" width="100%">
-        </div>
+    </div>
 </div>
 <!--<div class="container" style="padding: 0;background-color: rgb(255,255,255);text-align: left">-->
 <!--    <p><a href="index.php">首頁</a></p>-->
 <!--</div>-->
 <?php
-    centerTitle(1);
+centerTitle(3);
 ?>
 <div class="container bg-3 text-center" style="background-color: rgb(228,228,228)">
     <p style="text-align: left"><a href="index.php">首頁</a></p>
-<!--    <br>-->
+    <!--    <br>-->
     <div class="row">
         <div class="col-sm-8">
             <div>
-                <h1>王經篤(Jing-Doo Wang)</h1>
-                <h2>亞洲大學 資訊工程系 副教授</h2>
-                <br>
-                <h3>學歷： 國立中正大學資訊工程博士</h3>
-                <h3>辦公室： I517</h3>
-                <h3>分機： 1847</h3>
-                <h3>E-mail： jdwang@asia.edu.tw</h3>
-                <h3>研究領域：</h3>
-                <h3>雲端計算 、文件資訊擷取 、網路資訊擷取 、生物資訊</h3>
-<!--                --><?php
-//                if($_SESSION['id']==null) {
-//                    echo"<h2><a href='login.html'>Login</a></h2>";
-//                }
-//                else{
-//                    echo  $_SESSION['id'] ;
-//                    echo"<h2><a href='logout.php'>Logout</a></h2>";
-//                }
-//                if($_SESSION['id']!=null) {
-//                    echo $_SESSION['id'];
-//                }else{
-//                    echo "no SESSION";
-//                }
-//                ?>
-
-<!--                <button onclick="aa()" class="btn btn-primary btn-md">點我阿</button>-->
-<!--                <script>-->
-<!--                    function aa() {-->
-<!--                        var hello=window.prompt("aa");-->
-<!--                        document.createElement("標籤")-->
-<!--                  document.write(hello);-->
-<!---->
-<!--                    }-->
-<!--               </script>-->
+                <table class="table table-bordered">
+                    <!--                    <thead>-->
+                    <!--                    <tr>-->
+                    <!--                        <th style="background-color:#6163ff"> English Learning</th>-->
+                    <!--                    </tr>-->
+                    <!--                    </thead>-->
+                    <tbody>
+                    <tr>
+                        <th style="background-color:#be6240"> 參考期刊</th>
+                    </tr>
+                    <tr>
+                        <td><a href="http://www.editorialmanager.com/dami/">Data Mining and Knowledge Discovery (SCI) </a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://www.elsevier.com/wps/find/journaldescription.cws_home/939/description#description">IEEE Transactions on Cloud Computing IEEE Transactions on Cloud Computing (TCC)</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://www.siam.org/journals/sisc.php">SIAM JOURNAL ON SCIENTIFIC COMPUTING(2012,SCI, 12/247,IF:1.949 )</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://www.journalofcloudcomputing.com/">Journal of Cloud Computing:</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://www.hindawi.com/journals/tswj/">The Scientific World Journal</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://grid.chu.edu.tw/SI/FGCS/">Future Generation Computer Systems</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://www.blackwellpublishing.com/journal.asp?ref=0824-7935&site=1">Computational Intelligence(SCI)</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://bioinformatics.oupjournals.org/">Bioinformatics</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://www.journals.elsevier.com/information-systems/">Information Systems (SCI, Impact Factor: 1.595 )</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://www.elsevier.com/inca/publications/store/2/4/4/index.htt">Information Processing & Management ( EI, SCI Expanded)</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://www.springer.com/computer/database+management+&+information+retrieval/journal/10791">INFORMATION RETRIEVAL(SCI Expanded)</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://www.interscience.wiley.com/jpages/0038-0644/">Software - Practice & Experience (SCI Expanded)</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://talip.acm.org/">Transactions on Asian Language Information Processing (TALIP)</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://www.ksi.edu/seke/cpol.html">Computer Processing of Oriental Languages(CPOL)</a></td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="col-sm-4">
@@ -160,4 +181,3 @@ include ("menufunction.php");
 
 </body>
 </html>
-
