@@ -190,6 +190,7 @@ include ("menufunction.php");
 <!--<div class="container text-center" style="background-color: rgb(255,255,255);font-size: 1.4em">-->
 <div class="container text-center" id="footer">
     <p><a href="#top">點我回頂端</a></p>
+    <p> Lin @Asia University 2017</p>
 </div>
 
 <!--<div class="container-fluid bg-3 text-center">-->

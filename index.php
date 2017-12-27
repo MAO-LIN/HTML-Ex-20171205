@@ -102,7 +102,7 @@ include ("menufunction.php");
             ?>
             <div class="tab-content">
             <div id="menu1" class="tab-pane fade">
-                    <form action="" method="POST">
+                    <form action="index_edit.php" method="POST">
                         <div class="form-group">
                             <label for="name">名字:</label>
                             <input type="text" class="form-control" id="name" name="name">
@@ -184,7 +184,7 @@ include ("menufunction.php");
 </div>
 <div class="container text-center" id="footer">
     <p><a href="#top">點我回頂端</a></p>
-    <p> @developing by Lin </p>
+    <p> Lin @Asia University 2017</p>
 </div>
 
 <!--<div class="container-fluid bg-3 text-center">-->

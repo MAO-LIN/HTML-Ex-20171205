@@ -155,6 +155,7 @@ centerTitle(3);
 </div>
 <div class="container text-center" id="footer">
     <p><a href="#top">點我回頂端</a></p>
+    <p> Lin @Asia University 2017</p>
 </div>
 
 <!--<div class="container-fluid bg-3 text-center">-->
