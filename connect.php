@@ -18,6 +18,8 @@ if($id!=null&&$pw!=null&&$row[0]==$id&&$row[2]==$pw){
 //    echo $_SESSION['id']. '<br>';
 //    echo $id. '<br>';
 //    echo $pw. '<br>';
+    echo date("h:i:sa");
+    require_once('mailertest.php');
     echo '<meta http-equiv=REFRESH CONTENT=3;url=index.php>';
 }
 else{

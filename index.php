@@ -159,6 +159,9 @@ include ("menufunction.php");
                 <h3>E-mail： jdwang@asia.edu.tw</h3>
                 <h3>研究領域：</h3>
                 <h3>雲端計算 、文件資訊擷取 、網路資訊擷取 、生物資訊</h3>
+<!--                <div class="testImage" style="width:50px;height: 50px">-->
+<!---->
+<!--                </div>-->
 <!--                <button onclick="aa()" class="btn btn-primary btn-md">點我阿</button>-->
 <!--                <script>-->
 <!--                    function aa() {-->
