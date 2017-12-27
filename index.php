@@ -87,7 +87,69 @@ include ("menufunction.php");
 <!--    <br>-->
     <div class="row">
         <div class="col-sm-8">
-            <div>
+            <?php
+            if($_SESSION['id']!=null) {
+            ?>
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">簡介</a></li>
+                    <li><a data-toggle="tab" href="#menu1">修改</a></li>
+            </ul>
+                <?php
+            }
+            ?>
+            <?php
+            if($_SESSION['id']!=null) {
+            ?>
+            <div class="tab-content">
+            <div id="menu1" class="tab-pane fade">
+                    <form action="" method="POST">
+                        <div class="form-group">
+                            <label for="name">名字:</label>
+                            <input type="text" class="form-control" id="name" name="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="university">大學:</label>
+                            <input type="text" class="form-control" id="university"  name="	university">
+                        </div>
+                        <div class="form-group">
+                            <label for="department">學系:</label>
+                            <input type="text" class="form-control" id="department" name="department">
+                        </div>
+                        <div class="form-group">
+                            <label for="position">職位:</label>
+                            <input type="text" class="form-control" id="position" name="position">
+                        </div>
+                        <div class="form-group">
+                            <label for="education">學歷:</label>
+                            <input type="text" class="form-control" id="education" name="education">
+                        </div>
+                        <div class="form-group">
+                            <label for="office">辦公室:</label>
+                            <input type="text" class="form-control" id="office" name="office">
+                        </div>
+                        <div class="form-group">
+                            <label for="ext">分機:</label>
+                            <input type="text" class="form-control" id="ext" name="ext">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="text" class="form-control" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="research">研究領域:</label>
+                            <input type="text" class="form-control" id="research" name="research">
+                        </div>
+                        <div class="form-group">
+                            <label for="other">Other:</label>
+                            <input type="text" class="form-control" id="other" name="other">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-md">更改</button>
+                    </form>
+            </div>
+            <div id="home" class="tab-pane fade in active">
+                <?php
+                }
+                ?>
                 <h1>王經篤(Jing-Doo Wang)</h1>
                 <h2>亞洲大學 資訊工程系 副教授</h2>
                 <br>
@@ -97,21 +159,6 @@ include ("menufunction.php");
                 <h3>E-mail： jdwang@asia.edu.tw</h3>
                 <h3>研究領域：</h3>
                 <h3>雲端計算 、文件資訊擷取 、網路資訊擷取 、生物資訊</h3>
-<!--                --><?php
-//                if($_SESSION['id']==null) {
-//                    echo"<h2><a href='login.html'>Login</a></h2>";
-//                }
-//                else{
-//                    echo  $_SESSION['id'] ;
-//                    echo"<h2><a href='logout.php'>Logout</a></h2>";
-//                }
-//                if($_SESSION['id']!=null) {
-//                    echo $_SESSION['id'];
-//                }else{
-//                    echo "no SESSION";
-//                }
-//                ?>
-
 <!--                <button onclick="aa()" class="btn btn-primary btn-md">點我阿</button>-->
 <!--                <script>-->
 <!--                    function aa() {-->
@@ -121,7 +168,10 @@ include ("menufunction.php");
 <!---->
 <!--                    }-->
 <!--               </script>-->
-            </div>
+                <?php if($_SESSION['id']!=null){?>
+                    </div>
+            </div >
+               <?php }?>
         </div>
         <div class="col-sm-4">
             <?php
@@ -134,6 +184,7 @@ include ("menufunction.php");
 </div>
 <div class="container text-center" id="footer">
     <p><a href="#top">點我回頂端</a></p>
+    <p> @developing by Lin </p>
 </div>
 
 <!--<div class="container-fluid bg-3 text-center">-->
