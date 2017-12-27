@@ -20,8 +20,8 @@ try {
     $mail->addAddress('recipient1@example.net', 'Recipient1');
     $mail->addAddress('recipient2@example.com');
     $mail->addReplyTo('noreply@example.com', 'noreply');
-    $mail->addCC('cc@example.com');
-    $mail->addBCC('bcc@example.com');
+//    $mail->addCC('cc@example.com');
+//    $mail->addBCC('bcc@example.com');
 
     //Attachments
     $mail->addAttachment('/backup/myfile.tar.gz');
