@@ -14,6 +14,7 @@ $db_name='105021058';
 
 // Create connection
 $conn =mysqli_connect($serverName, $username, $password , $db_name);
+mysqli_set_charset($conn,'utf8');
 
 // Check connection
 if (!$conn) {

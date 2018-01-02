@@ -5,8 +5,9 @@
  * Date: 2017/12/27
  * Time: 上午 07:51
  */
+session_start();
 include("mysql_connect.php");
-if($_SESSION['username'] != null)
+if($_SESSION['id']!= null)
 {
     //將$_SESSION['username']丟給$id
     //這樣在下SQL語法時才可以給搜尋的值
@@ -21,19 +22,31 @@ if($_SESSION['username'] != null)
     $research=$_POST['research'];
     $other=$_POST['other'];
     //若以下$id直接用$_SESSION['username']將無法使用
-    $sql = "SELECT * FROM member_table where username='$id'";
-    $result = mysqli_query($conn,$sql);
-    $row = mysqli_fetch_row($result);
+    include("mysql_connect.php");
+//    $sql="SELECT * FROM `Introduction` WHERE id = '1'";
+//    $result=mysqli_query($conn,$sql);
+//    $row=mysqli_fetch_row($result);
+    if($name!=null&&$university!=null&&$department!=null&&$position!=null&&$education!=null&&$office!=null&&$email!=null&&$research!=null){
+        $sql="SELECT * FROM `Introduction` WHERE id = '1'";
+        $sql = "update `Introduction` set name='$name', university='$university', department='$department',
+                  position ='$position', education='$education' , office='$office', ext='$ext' , email='$email',research='$research', other='$other' where id='1'";
+//        $sql = "update `Introduction` set university = $university WHERE `id` = '1'";
+//        $sql = "UPDATE `Introduction` SET id=1 university=$university WHERE id='1'";
+//        $sql="UPDATE `Introduction` SET email = 'aaaa' WHERE id = '1'";
+        if(mysqli_query($conn,$sql))
+        {
+            echo '修改成功!';
+            echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
+        }
+        else
+        {
+            echo '修改失敗!';
+            echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
+        }
 
-    echo "<form name=\"form\" method=\"post\" action=\"update_finish.php\">";
-    echo "帳號：<input type=\"text\" name=\"id\" value=\"$row[1]\" />(此項目無法修改) < br>";
-    echo "密碼：<input type=\"password\" name=\"pw\" value=\"$row[2]\" /> <br>";
-    echo "再一次輸入密碼：<input type=\"password\" name=\"pw2\" value=\"$row[2]\" /> <br>";
-    echo "電話：<input type=\"text\" name=\"telephone\" value=\"$row[3]\" /> <br>";
-    echo "地址：<input type=\"text\" name=\"address\" value=\"$row[4]\" /> <br>";
-    echo "備註：<textarea name=\"other\" cols=\"45\" rows=\"5\">$row[5]</textarea> <br>";
-    echo "<input type=\"submit\" name=\"button\" value=\"確定\" />";
-    echo "</form>";
+    }else{
+        echo " fail";
+    }
 }
 else
 {

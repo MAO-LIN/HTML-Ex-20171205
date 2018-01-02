@@ -10,6 +10,7 @@ include ("function.php");
 include ("menufunction.php");
 ?>
 <!DOCTYPE html>
+<meta charset="utf-8">
 <html lang="en">
 <head>
     <title>Jing-Doo Wang</title>
@@ -99,49 +100,73 @@ include ("menufunction.php");
             ?>
             <?php
             if($_SESSION['id']!=null) {
+            include("mysql_connect.php");
+            $sql="SELECT * FROM `Introduction` WHERE id = '1' ";
+            $result=mysqli_query($conn,$sql);
+//            mysqli_set_charset($conn,'utf8');
+            $row=mysqli_fetch_row($result);
+//            echo $row[1];
+//            echo "<br>";
+//            echo $row[2];
+//            echo "<br>";
+//            echo $row[3];
+//            echo "<br>";
+//            echo $row[4];
+//            echo "<br>";
+//            echo $row[5];
+//            echo "<br>";
+//            echo $row[6];
+//            echo "<br>";
+//            echo $row[7];
+//            echo "<br>";
+//            echo $row[8];
+//            echo "<br>";
+//            echo $row[9];
+//            echo "<br>";
+//            echo $row[10];
             ?>
             <div class="tab-content">
             <div id="menu1" class="tab-pane fade">
                     <form action="index_edit.php" method="POST">
                         <div class="form-group">
                             <label for="name">名字:</label>
-                            <input type="text" class="form-control" id="name" name="name">
+                           <input type="text" class="form-control" id="name" name="name" <?php echo"value=$row[1]"?>>
                         </div>
                         <div class="form-group">
                             <label for="university">大學:</label>
-                            <input type="text" class="form-control" id="university"  name="	university">
+                            <input type="text" class="form-control" id="university"  name="university" <?php echo"value=$row[2]"?>>
                         </div>
                         <div class="form-group">
                             <label for="department">學系:</label>
-                            <input type="text" class="form-control" id="department" name="department">
+                            <input type="text" class="form-control" id="department" name="department" <?php echo"value=$row[3]"?>>
                         </div>
                         <div class="form-group">
                             <label for="position">職位:</label>
-                            <input type="text" class="form-control" id="position" name="position">
+                            <input type="text" class="form-control" id="position" name="position" <?php echo"value=$row[4]"?>>
                         </div>
                         <div class="form-group">
                             <label for="education">學歷:</label>
-                            <input type="text" class="form-control" id="education" name="education">
+                            <input type="text" class="form-control" id="education" name="education" <?php echo"value=$row[5]"?>>
                         </div>
                         <div class="form-group">
                             <label for="office">辦公室:</label>
-                            <input type="text" class="form-control" id="office" name="office">
+                            <input type="text" class="form-control" id="office" name="office" <?php echo"value=$row[6]"?>>
                         </div>
                         <div class="form-group">
                             <label for="ext">分機:</label>
-                            <input type="text" class="form-control" id="ext" name="ext">
+                            <input type="text" class="form-control" id="ext" name="ext" <?php echo"value=$row[7]"?>>
                         </div>
                         <div class="form-group">
                             <label for="email">Email:</label>
-                            <input type="text" class="form-control" id="email" name="email">
+                            <input type="text" class="form-control" id="email" name="email" <?php echo"value=$row[8]"?>>
                         </div>
                         <div class="form-group">
                             <label for="research">研究領域:</label>
-                            <input type="text" class="form-control" id="research" name="research">
+                            <input type="text" class="form-control" id="research" name="research" <?php echo"value=$row[9]"?>>
                         </div>
                         <div class="form-group">
                             <label for="other">Other:</label>
-                            <input type="text" class="form-control" id="other" name="other">
+                            <input type="text" class="form-control" id="other" name="other" <?php echo"value=$row[10]"?>>
                         </div>
                         <button type="submit" class="btn btn-primary btn-md">更改</button>
                     </form>
@@ -150,15 +175,24 @@ include ("menufunction.php");
                 <?php
                 }
                 ?>
-                <h1>王經篤(Jing-Doo Wang)</h1>
-                <h2>亞洲大學 資訊工程系 副教授</h2>
+
+                <h1><?php echo"$row[1]"?></h1>
+                <h2><?php echo"$row[2]"?> <?php echo"$row[3]"?> <?php echo"$row[4]"?></h2>
                 <br>
-                <h3>學歷： 國立中正大學資訊工程博士</h3>
-                <h3>辦公室： I517</h3>
-                <h3>分機： 1847</h3>
-                <h3>E-mail： jdwang@asia.edu.tw</h3>
+                <h3>學歷： <?php echo"$row[5]"?></h3>
+                <h3>辦公室： <?php echo"$row[6]"?></h3>
+                <h3>分機： <?php echo"$row[7]"?></h3>
+                <h3>E-mail： <?php echo"$row[8]"?></h3>
                 <h3>研究領域：</h3>
-                <h3>雲端計算 、文件資訊擷取 、網路資訊擷取 、生物資訊</h3>
+                <h3><?php echo"$row[9]"?></h3>
+                <?php
+                if($row[10]!=null){
+                    echo " <h3>其他：</h3> ";
+                    echo "<h3>$row[10]</h3>";
+                }
+                ?>
+
+
 <!--                <div class="testImage" style="width:50px;height: 50px">-->
 <!---->
 <!--                </div>-->
