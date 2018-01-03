@@ -8,12 +8,13 @@
 session_start();
 include ("function.php");
 include ("menufunction.php");
+include("mysql_connect.php");
 ?>
 <!DOCTYPE html>
 <meta charset="utf-8">
 <html lang="en">
 <head>
-    <title>Jing-Doo Wang</title>
+    <title>Jing-Doo_Wang</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -21,6 +22,7 @@ include ("menufunction.php");
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/newstest.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/cwtexyen.css">
+
     <style>
         /* Remove the navbar's default margin-bottom and rounded borders */
         .navbar {
@@ -77,6 +79,26 @@ include ("menufunction.php");
         <img src="Image/background2_reSize.jpg" width="100%">
         </div>
 </div>
+<!--<div class="container text-center" style="padding: 0">-->
+<!--    <div style="max-height:400px">-->
+<!--<div class="view hm-white-light jarallax" data-jarallax='{"speed": 0.2}' data-jarallax-video="https://www.youtube.com/watch?v=syBR4xiikcQ">-->
+<!--    <div class="full-bg-img">-->
+<!--        <div class="container flex-center">-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-12 wow fadeIn">-->
+<!--                    <div class="text-center text-danger">-->
+<!--                        <h1 class="display-2 mb-2 wow fadeInDown" data-wow-delay="0.3s">Header + Video</h1>-->
+<!--                        <h5 class="font-up mb-3 mt-1 font-bold wow fadeInDown" data-wow-delay="0.4s">Para poner imagen o video de fondo. <br>Realizado con <b>Bootstrap 4</b> y <b>Material Design para Bootstrap</b></h5>-->
+<!--                        <a class="btn btn-danger btn-lg wow fadeInDown" data-wow-delay="0.4s"><i class="fa fa-diamond"></i> Administrador</a>-->
+<!--                        <a class="btn btn-primary btn-lg wow fadeInDown" data-wow-delay="0.4s"><i class="fa fa-shield"></i> Moderador</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</div>-->
+
 <!--<div class="container" style="padding: 0;background-color: rgb(255,255,255);text-align: left">-->
 <!--    <p><a href="index.php">首頁</a></p>-->
 <!--</div>-->
@@ -100,30 +122,10 @@ include ("menufunction.php");
             ?>
             <?php
             if($_SESSION['id']!=null) {
-            include("mysql_connect.php");
             $sql="SELECT * FROM `Introduction` WHERE id = '1' ";
             $result=mysqli_query($conn,$sql);
 //            mysqli_set_charset($conn,'utf8');
             $row=mysqli_fetch_row($result);
-//            echo $row[1];
-//            echo "<br>";
-//            echo $row[2];
-//            echo "<br>";
-//            echo $row[3];
-//            echo "<br>";
-//            echo $row[4];
-//            echo "<br>";
-//            echo $row[5];
-//            echo "<br>";
-//            echo $row[6];
-//            echo "<br>";
-//            echo $row[7];
-//            echo "<br>";
-//            echo $row[8];
-//            echo "<br>";
-//            echo $row[9];
-//            echo "<br>";
-//            echo $row[10];
             ?>
             <div class="tab-content">
             <div id="menu1" class="tab-pane fade">
@@ -174,8 +176,14 @@ include ("menufunction.php");
             <div id="home" class="tab-pane fade in active">
                 <?php
                 }
-                ?>
 
+                ?>
+                <?php
+                $sql="SELECT * FROM `Introduction` WHERE id = '1' ";
+                $result=mysqli_query($conn,$sql);
+                //            mysqli_set_charset($conn,'utf8');
+                $row=mysqli_fetch_row($result);
+                ?>
                 <h1><?php echo"$row[1]"?></h1>
                 <h2><?php echo"$row[2]"?> <?php echo"$row[3]"?> <?php echo"$row[4]"?></h2>
                 <br>
@@ -248,4 +256,20 @@ include ("menufunction.php");
 
 </body>
 </html>
+<!--//video hearder-->
+<!--<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>-->
+<!--<script type="text/javascript" src="js/popper.min.js"></script>-->
+<!--<script src="https://mdbootstrap.com/previews/docs/latest/js/bootstrap.min.js"></script>-->
+<!--<script src="https://mdbootstrap.com/previews/docs/latest/js/mdb.min.js"></script>-->
+<!--<script src="https://mdbootstrap.com/previews/docs/latest/js/jarallax.js"></script>-->
+<!--<script src="https://mdbootstrap.com/previews/docs/latest/js/jarallax-video.js"></script>-->
+<!--<script>-->
+<!--    new WOW().init();-->
+<!--</script>-->
+<!--//href-->
+<!--https://bootsnipp.com/snippets/featured/header-video-bs4-mdb-->
+<!--https://bootsnipp.com/snippets/featured/hover-effect-with-amazing-effect-->
+<!--https://bootsnipp.com/snippets/featured/windows-8-bootstrap-modals-->
+<!--https://bootsnipp.com/snippets/AXeZg-->
+<!--https://bootsnipp.com/snippets/featured/bootstrap-4-card-->
 
