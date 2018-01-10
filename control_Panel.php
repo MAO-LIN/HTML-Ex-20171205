@@ -6,10 +6,10 @@
  * Time: 下午 09:37
  */
 session_start();
-include ("function.php");
+include("function.php");
 //include ("menufunction.php");
-include ("control_function.php");
-include ("mysql_connect.php");
+include("control_function.php");
+include("mysql_connect.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +47,7 @@ include ("mysql_connect.php");
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a><img src="Image/Asiaa_Logo.png" style="width:3.7em;padding: 0;margin: 0;" ></a>
+            <a><img src="Image/Asiaa_Logo.png" style="width:3.7em;padding: 0;margin: 0;"></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <?php
@@ -55,11 +55,10 @@ include ("mysql_connect.php");
             ?>
             <ul class="nav navbar-nav navbar-right">
                 <?php
-                if($_SESSION['id']!=null) {
-                    echo" <li><a href='logout.php'><span class='glyphicon glyphicon-log-out'></span> Logout</a></li>";
-                }
-                else{
-                    echo"<li><a href='login.html'><span class='glyphicon glyphicon-log-in'></span> Login</a></li>";
+                if ($_SESSION['id'] != null) {
+                    echo " <li><a href='logout.php'><span class='glyphicon glyphicon-log-out'></span> Logout</a></li>";
+                } else {
+                    echo "<li><a href='login.html'><span class='glyphicon glyphicon-log-in'></span> Login</a></li>";
                 }
                 ?>
 
@@ -85,81 +84,78 @@ include ("mysql_connect.php");
     <br>
     <div class="row">
         <div class="col-sm-2">
-           <?php menu(1);?>
+            <?php menu(1); ?>
         </div>
         <div class="col-sm-10">
             <div class="tab-content">
                 <div id="home" class="tab-pane fade in active" style="background-color: white;margin: 10px 10px 10px">
                     <?php
-                    $sql="SELECT * FROM `Introduction` WHERE id = '1' ";
-                    $result=mysqli_query($conn,$sql);
-                    $row=mysqli_fetch_row($result);
+                    $sql = "SELECT * FROM `Introduction` WHERE id = '1' ";
+                    $result = mysqli_query($conn, $sql);
+                    $row = mysqli_fetch_row($result);
                     ?>
-                    <h1><?php echo"$row[1]"?></h1>
-                    <h2><?php echo"$row[2]"?> <?php echo"$row[3]"?> <?php echo"$row[4]"?></h2>
+                    <h1><?php echo "$row[1]" ?></h1>
+                    <h2><?php echo "$row[2]" ?><?php echo "$row[3]" ?><?php echo "$row[4]" ?></h2>
                     <br>
-                    <h3>學歷： <?php echo"$row[5]"?></h3>
-                    <h3>辦公室： <?php echo"$row[6]"?></h3>
-                    <h3>分機： <?php echo"$row[7]"?></h3>
-                    <h3>E-mail： <?php echo"$row[8]"?></h3>
+                    <h3>學歷： <?php echo "$row[5]" ?></h3>
+                    <h3>辦公室： <?php echo "$row[6]" ?></h3>
+                    <h3>分機： <?php echo "$row[7]" ?></h3>
+                    <h3>E-mail： <?php echo "$row[8]" ?></h3>
                     <h3>研究領域：</h3>
-                    <h3><?php echo"$row[9]"?></h3>
+                    <h3><?php echo "$row[9]" ?></h3>
                     <?php
-                    if($row[10]!=null){
+                    if ($row[10] != null) {
                         echo " <h3>其他：</h3> ";
                         echo "<h3>$row[10]</h3>";
                     }
                     ?>
                 </div>
+                <div id="writing" class="tab-pane fade" style="background-color: white;margin: 10px 10px 10px">
+                </div>
                 <div id="academic" class="tab-pane fade" style="background-color: white;margin: 10px 10px 10px">
-<!--                    <h3><a href="#academic_add">新增</a></h3>-->
-<!--                    <h3><a href="#academic_edit">修改</a></h3>-->
-<!--                    <h3><a href="#academic_remove">刪除</a></h3>-->
+                    <!--                    <h3><a href="#academic_add">新增</a></h3>-->
+                    <!--                    <h3><a href="#academic_edit">修改</a></h3>-->
+                    <!--                    <h3><a href="#academic_remove">刪除</a></h3>-->
                     <?php
                     include("mysql_connect.php");
-                    $sql="SELECT * FROM `acadmid`";
-                    $result=mysqli_query($conn,$sql);
-                    $total=mysqli_num_rows($result);
-                    for($i=0;$i<$total;$i++){
-                        $row=mysqli_fetch_row($result);
-                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">".($i+1)."</h3>" ;
-                        echo "<h3 style=\"font-size:1em;font-weight:bold;text-align: left; border-bottom: solid;\">".$row[0]."</h3>";
-                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[1].",".$row[2]."</h3>";
-                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[2]."</h3>";
-                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[3]."</h3>";
-                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[4]."</h3>";
-                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[5]."</h3>";
+                    $sql = "SELECT * FROM `acadmid`";
+                    $result = mysqli_query($conn, $sql);
+                    $total = mysqli_num_rows($result);
+                    for ($i = 0; $i < $total; $i++) {
+                        $row = mysqli_fetch_row($result);
+                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">" . ($i + 1) . "</h3>";
+                        echo "<h3 style=\"font-size:1em;font-weight:bold;text-align: left; border-bottom: solid;\">" . $row[0] . "</h3>";
+                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">" . $row[1] . "," . $row[2] . "</h3>";
+                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">" . $row[2] . "</h3>";
+                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">" . $row[3] . "</h3>";
+                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">" . $row[4] . "</h3>";
+                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">" . $row[5] . "</h3>";
                         echo "<br>";
+                        echo "<form action=\"academic.php\" method=\"POST\">";
+                        echo "<button type=\"submit\" class=\"btn btn-primary btn-md\">新增</button>";
+                        echo "</form>";
+                        echo "<button type=\"submit\" class=\"btn btn-primary btn-md\">修改</button>";
+                        echo "<button type=\"submit\" class=\"btn btn-primary btn-md\">刪除</button>";
                     }
                     ?>
-<!--                    <div id="academic_add" class="tab-pane fade" style="background-color: white;margin: 10px 10px 10px">-->
-<!--                            <p>sadsadas</p>-->
-<!--                    </div>-->
-<!--                    <div id="academic_edit" class="tab-pane fade" style="background-color: white;margin: 10px 10px 10px">-->
-<!--                        <p>edit</p>-->
-<!--                    </div>-->
-<!--                    <div id="academic_remove" class="tab-pane fade" style="background-color: white;margin: 10px 10px 10px">-->
-<!--                        <p>remove</p>-->
-<!--                    </div>-->
-
                 </div>
 
                 <div id="writing" class="tab-pane fade" style="background-color: white;margin: 10px 10px 10px">
-                    <h3><a href="#writing_add">新增</a></h3>
-                    <h3><a href="#writing_edit">修改</a></h3>
-                    <h3><a href="#writing_remove">刪除</a></h3>
+<!--                    <h3><a href="#writing_add">新增</a></h3>-->
+<!--                    <h3><a href="#writing_edit">修改</a></h3>-->
+<!--                    <h3><a href="#writing_remove">刪除</a></h3>-->
                     <?php
                     include("mysql_connect.php");
-                    $sql="SELECT * FROM `writing`";
-                    $result=mysqli_query($conn,$sql);
-                    $total=mysqli_num_rows($result);
-//                    echo $row[0];
-                    for($i=0;$i<$total;$i++){
-                        $row=mysqli_fetch_row($result);
-                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">".($i+1)."</h3>" ;
-                        echo "<h3 style=\"font-size:1em;font-weight:bold;text-align: left; border-bottom: solid;\">".$row[1]."</h3>";
-                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[2].",".$row[6].",".$row[4].",".$row[5].",".$row[7].",".$row[8].",".$row[10]."</h3>";
-                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[3]."</h3>";
+                    $sql = "SELECT * FROM `writing`";
+                    $result = mysqli_query($conn, $sql);
+                    $total = mysqli_num_rows($result);
+                    //                    echo $row[0];
+                    for ($i = 0; $i < $total; $i++) {
+                        $row = mysqli_fetch_row($result);
+                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">" . ($i + 1) . "</h3>";
+                        echo "<h3 style=\"font-size:1em;font-weight:bold;text-align: left; border-bottom: solid;\">" . $row[1] . "</h3>";
+                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">" . $row[2] . "," . $row[6] . "," . $row[4] . "," . $row[5] . "," . $row[7] . "," . $row[8] . "," . $row[10] . "</h3>";
+                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">" . $row[3] . "</h3>";
                         echo "<br>";
                     }
                     ?>
