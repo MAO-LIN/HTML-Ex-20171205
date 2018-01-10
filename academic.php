@@ -88,60 +88,127 @@ centerTitle(3);
     <div class="row">
         <div class="col-sm-8">
             <div>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#home">學術</a></li>
+                    <?php
+                    if($_SESSION['id']!=null) {
+                        ?>
+                        <li><a data-toggle="tab" href="#add">新增</a></li>
+                        <li><a data-toggle="tab" href="#edit">修改</a></li>
+                        <li><a data-toggle="tab" href="#remove">刪除</a></li>
+                        <?php
+                    }
+                    ?>
+                </ul>
+                <div class="tab-content">
+                    <div id="home" class="tab-pane fade in active">
                 <table class="table table-bordered">
-                    <!--                    <thead>-->
-                    <!--                    <tr>-->
-                    <!--                        <th style="background-color:#6163ff"> English Learning</th>-->
-                    <!--                    </tr>-->
-                    <!--                    </thead>-->
                     <tbody>
-                    <tr>
-                        <th style="background-color:#be6240"> 參考期刊</th>
-                    </tr>
-                    <tr>
-                        <td><a href="http://www.editorialmanager.com/dami/">Data Mining and Knowledge Discovery (SCI) </a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://www.elsevier.com/wps/find/journaldescription.cws_home/939/description#description">IEEE Transactions on Cloud Computing IEEE Transactions on Cloud Computing (TCC)</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://www.siam.org/journals/sisc.php">SIAM JOURNAL ON SCIENTIFIC COMPUTING(2012,SCI, 12/247,IF:1.949 )</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://www.journalofcloudcomputing.com/">Journal of Cloud Computing:</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://www.hindawi.com/journals/tswj/">The Scientific World Journal</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://grid.chu.edu.tw/SI/FGCS/">Future Generation Computer Systems</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://www.blackwellpublishing.com/journal.asp?ref=0824-7935&site=1">Computational Intelligence(SCI)</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://bioinformatics.oupjournals.org/">Bioinformatics</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://www.journals.elsevier.com/information-systems/">Information Systems (SCI, Impact Factor: 1.595 )</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://www.elsevier.com/inca/publications/store/2/4/4/index.htt">Information Processing & Management ( EI, SCI Expanded)</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://www.springer.com/computer/database+management+&+information+retrieval/journal/10791">INFORMATION RETRIEVAL(SCI Expanded)</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://www.interscience.wiley.com/jpages/0038-0644/">Software - Practice & Experience (SCI Expanded)</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://talip.acm.org/">Transactions on Asian Language Information Processing (TALIP)</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://www.ksi.edu/seke/cpol.html">Computer Processing of Oriental Languages(CPOL)</a></td>
-                    </tr>
+                    <?php
+                    include("mysql_connect.php");
+                    $sql="SELECT * FROM `acadmid`";
+                    $result=mysqli_query($conn,$sql);
+                    $total=mysqli_num_rows($result);
+                    for($i=0;$i<$total;$i++){
+                        $row=mysqli_fetch_row($result);
+                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">".($i+1)."</h3>" ;
+                        echo "<h3 style=\"font-size:1em;font-weight:bold;text-align: left; border-bottom: solid;\">".$row[0]."</h3>";
+                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[1].",".$row[2]."</h3>";
+                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[2]."</h3>";
+                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[3]."</h3>";
+                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[4]."</h3>";
+                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[5]."</h3>";
+                        echo "<br>";
+                    }
+                    ?>
+<!--                    <tr>-->
+<!--                        <th style="background-color:#be6240"> 參考期刊</th>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://www.editorialmanager.com/dami/">Data Mining and Knowledge Discovery (SCI) </a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://www.elsevier.com/wps/find/journaldescription.cws_home/939/description#description">IEEE Transactions on Cloud Computing IEEE Transactions on Cloud Computing (TCC)</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://www.siam.org/journals/sisc.php">SIAM JOURNAL ON SCIENTIFIC COMPUTING(2012,SCI, 12/247,IF:1.949 )</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://www.journalofcloudcomputing.com/">Journal of Cloud Computing:</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://www.hindawi.com/journals/tswj/">The Scientific World Journal</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://grid.chu.edu.tw/SI/FGCS/">Future Generation Computer Systems</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://www.blackwellpublishing.com/journal.asp?ref=0824-7935&site=1">Computational Intelligence(SCI)</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://bioinformatics.oupjournals.org/">Bioinformatics</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://www.journals.elsevier.com/information-systems/">Information Systems (SCI, Impact Factor: 1.595 )</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://www.elsevier.com/inca/publications/store/2/4/4/index.htt">Information Processing & Management ( EI, SCI Expanded)</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://www.springer.com/computer/database+management+&+information+retrieval/journal/10791">INFORMATION RETRIEVAL(SCI Expanded)</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://www.interscience.wiley.com/jpages/0038-0644/">Software - Practice & Experience (SCI Expanded)</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://talip.acm.org/">Transactions on Asian Language Information Processing (TALIP)</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://www.ksi.edu/seke/cpol.html">Computer Processing of Oriental Languages(CPOL)</a></td>-->
+<!--                    </tr>-->
                     </tbody>
                 </table>
+                    </div>
+                    <div id="add" class="tab-pane fade">
+<!--                        --><?php
+//                        if($_SESSION['id']!=null) {
+//                            ?>
+                                <form action="add.php" method="POST">
+                                    <div class="form-group">
+                                        <label for="title">計畫名稱:</label>
+                                        <input type="text" class="form-control" id="title" name="title">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="number">計畫編號:</label>
+                                        <input type="text" class="form-control" id="number"  name="number">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="date">計畫執行起迄:</label>
+                                        <input type="text" class="form-control" id="date" name="date">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="money">核定金額:</label>
+                                        <input type="text" class="form-control" id="money" name="money">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="position">擔任職務:</label>
+                                        <input type="text" class="form-control" id="position" name="position">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="other">其他:</label>
+                                        <input type="text" class="form-control" id="other" name="other">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-md">新增</button>
+                                </form>
+<!--                            --><?php
+//                        }
+//                        ?>
+                    </div>
+                </div>
+                <div id="edit" class="tab-pane fade">
+                </div>
+                <div id="remove" class="tab-pane fade">
+                </div>
             </div>
         </div>
         <div class="col-sm-4">

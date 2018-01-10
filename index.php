@@ -199,8 +199,9 @@ include("mysql_connect.php");
                     echo "<h3>$row[10]</h3>";
                 }
                 ?>
-
-
+                <?php if($_SESSION['id']!=null) {
+                    echo "<h2><a href='control_Panel.php'></a></h2>";
+                }?>
 <!--                <div class="testImage" style="width:50px;height: 50px">-->
 <!---->
 <!--                </div>-->

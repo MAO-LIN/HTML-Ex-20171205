@@ -20,7 +20,7 @@ if($id!=null&&$pw!=null&&$row[0]==$id&&$row[2]==$pw){
 //    echo $pw. '<br>';
     echo date("h:i:sa");
     require_once('mailertest.php');
-    echo '<meta http-equiv=REFRESH CONTENT=3;url=index.php>';
+    echo '<meta http-equiv=REFRESH CONTENT=3;url=control_Panel.php>';
 }
 else{
     echo'Login failed';
