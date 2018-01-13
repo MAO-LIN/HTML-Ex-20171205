@@ -19,12 +19,12 @@ function menu($flag){
             </div>
             <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li clsee="action"><a data-toggle="tab" href="#home">個人資料<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
-                    <li ><a data-toggle="tab" href="#educateion">簡歷<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
-                    <li ><a data-toggle="tab" href="#academic">學術<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
-                    <li ><a data-toggle="tab" href="#writing">著作<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
-                    <li ><a data-toggle="tab" href="#student">學生<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
-                    <li ><a data-toggle="tab" href="#links">常用連結<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
+                    <li <?php if($flag==1) echo"style='background-color: rgba(154,154,154,0.5);'"; ?>><a href="control_Panel.php">個人資料<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
+                    <li <?php if($flag==2) echo"style='background-color: rgba(154,154,154,0.5);'"; ?>><a href="control_Panel_educateion.php">簡歷<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
+                    <li <?php if($flag==3) echo"style='background-color: rgba(154,154,154,0.5);'"; ?>><a href="control_Panel_academic.php">學術<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
+                    <li <?php if($flag==4) echo"style='background-color: rgba(154,154,154,0.5);'"; ?>><a  href="control_Panel_writing.php">著作<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
+                    <li <?php if($flag==5) echo"style='background-color: rgba(154,154,154,0.5);'"; ?>><a  href="control_Panel_student.php">學生<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
+                    <li <?php if($flag==6) echo"style='background-color: rgba(154,154,154,0.5);'"; ?>><a href="control_Panel_links.php">常用連結<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-tags"></span></a></li>
                 </ul>
             </div>
 <!--        </div>-->

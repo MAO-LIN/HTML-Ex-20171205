@@ -47,14 +47,6 @@ include ("menufunction.php");
             <a><img src="Image/Asiaa_Logo.png" style="width:3.7em;padding: 0;margin: 0;" ></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
-            <!--            <ul class="nav navbar-nav">-->
-            <!--                <li class="active"><a href="#">首頁</a></li>-->
-            <!--                <li><a href="#">簡歷</a></li>-->
-            <!--                <li><a href="#">學術</a></li>-->
-            <!--                <li><a href="#">著作</a></li>-->
-            <!--                <li><a href="#">學生</a></li>-->
-            <!--                <li><a href="#">常用連結</a></li>-->
-            <!--            </ul>-->
             <?php
             varbar(3);
             ?>

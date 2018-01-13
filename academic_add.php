@@ -14,9 +14,6 @@ $date = $_POST['date'];
 $money = $_POST['money'];
 $position = $_POST['position'];
 $other = $_POST['other'];
-//echo "ok";
-//echo "<br/>";
-
 //判斷帳號密碼是否為空值
 //確認密碼輸入的正確性
 if($title != null && $number != null && $date != null && $position!=null)
@@ -26,12 +23,12 @@ if($title != null && $number != null && $date != null && $position!=null)
     if(mysqli_query($conn,$sql))
     {
         echo '新增成功!';
-        echo '<meta http-equiv=REFRESH CONTENT=2;url=academic.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=2;url=control_Panel_academic.php>';
     }
     else
     {
         echo '新增失敗!';
-        echo '<meta http-equiv=REFRESH CONTENT=2;url=academic.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=2;url=control_Panel_academic.php>';
     }
 }else{
 //    echo $name."<br/>";

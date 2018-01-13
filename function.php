@@ -15,10 +15,7 @@ function varbar($flag){
         <li <?php if($flag==4)echo"class='active menuBarAction' "?>><a href="writing.php">著作</a></li>
         <li <?php if($flag==5)echo"class='active menuBarAction' "?>><a href="student.php">學生</a></li>
         <li <?php if($flag==6)echo"class='active menuBarAction' "?>><a href="links.php">常用連結</a></li>
-<!--        --><?php //if($_SESSION('id')!=null){?>
-        <!--        <li --><?php //if($flag==7)echo"class='active menuBarAction' "?><!-->-->
-        <!--            <a href="control_function.php">控制台</a></li>-->
-        <!--        --><?php //}?>
+        <?php cons($flag); ?>
     </ul>
     <?php
 }
@@ -36,4 +33,16 @@ function centerTitle($flag){
 <!--    </div>-->
 <?php
 }
+
+function cons($flag)
+{
+    $aa='';
+    if($flag==7){
+        $aa="class='menuBarAction'";
+    }
+ if($_SESSION['id']!=null){
+     echo "<li style='background-color: rgb(149,139,255)' $aa><a href=\"control_Panel.php\">控制台</a></li>";
+ }
+}
+
 

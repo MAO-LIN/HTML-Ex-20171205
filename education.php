@@ -6,8 +6,9 @@
  * Time: 下午 08:09
  */
 session_start();
-include ("function.php");
-include ("menufunction.php");
+include("function.php");
+include("menufunction.php");
+include("mysql_connect.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +45,7 @@ include ("menufunction.php");
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a><img src="Image/Asiaa_Logo.png" style="width:3.7em;padding: 0;margin: 0;" ></a>
+            <a><img src="Image/Asiaa_Logo.png" style="width:3.7em;padding: 0;margin: 0;"></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <?php
@@ -52,11 +53,10 @@ include ("menufunction.php");
             ?>
             <ul class="nav navbar-nav navbar-right">
                 <?php
-                if($_SESSION['id']!=null) {
-                    echo" <li><a href='logout.php'><span class='glyphicon glyphicon-log-out'></span> Logout</a></li>";
-                }
-                else{
-                    echo"<li><a href='login.html'><span class='glyphicon glyphicon-log-in'></span> Login</a></li>";
+                if ($_SESSION['id'] != null) {
+                    echo " <li><a href='logout.php'><span class='glyphicon glyphicon-log-out'></span> Logout</a></li>";
+                } else {
+                    echo "<li><a href='login.html'><span class='glyphicon glyphicon-log-in'></span> Login</a></li>";
                 }
                 ?>
 
@@ -87,8 +87,8 @@ include ("menufunction.php");
                 <li><a data-toggle="tab" href="#edu">經歷</a></li>
                 <li><a data-toggle="tab" href="#teach">教學</a></li>
                 <li><a data-toggle="tab" href="#grounp">參加團體</a></li>
-                <li><a data-toggle="tab" href="#speech">專題演講</a></li>
-                <li><a data-toggle="tab" href="#honor">榮譽</a></li>
+                <!--                <li><a data-toggle="tab" href="#speech">專題演講</a></li>-->
+                <!--                <li><a data-toggle="tab" href="#honor">榮譽</a></li>-->
                 <li><a data-toggle="tab" href="#other">其他</a></li>
 
             </ul>
@@ -96,26 +96,46 @@ include ("menufunction.php");
             <div class="tab-content">
                 <div id="home" class="tab-pane fade in active">
                     <div style="text-align: left">
-                        <h3>沙鹿國小 (1972.9-1978.6)</h3>
-
-                        <h3>沙鹿國中 (1978.9-1981.6)</h3>
-
-                        <h3> 台中一中 (1981.9-1984.6)</h3>
-
-                        <h3> 大同工學院資訊工程系   (1985.9-1989.6)</h3>
-
-                        <h3> 中正大學資訊工程所 碩士(1991.9-1993.6)</h3>
-
-                        <h3> 中正大學資訊工程所 博士(1993.9-2002.6)</h3>
+                        <!--                        <h3>沙鹿國小 (1972.9-1978.6)</h3>-->
+                        <!---->
+                        <!--                        <h3>沙鹿國中 (1978.9-1981.6)</h3>-->
+                        <!---->
+                        <!--                        <h3> 台中一中 (1981.9-1984.6)</h3>-->
+                        <!---->
+                        <!--                        <h3> 大同工學院資訊工程系   (1985.9-1989.6)</h3>-->
+                        <!---->
+                        <!--                        <h3> 中正大學資訊工程所 碩士(1991.9-1993.6)</h3>-->
+                        <!---->
+                        <!--                        <h3> 中正大學資訊工程所 博士(1993.9-2002.6)</h3>-->
+                        <?php
+                        $sql = "SELECT * FROM `education` WHERE style = '1'";
+                        $result = mysqli_query($conn, $sql);
+                        //            mysqli_set_charset($conn,'utf8');
+                        $total = mysqli_num_rows($result);
+                        for ($i = 0; $i < $total; $i++) {
+                            $row = mysqli_fetch_row($result);
+                            echo " <h3>$row[1] $row[3]</h3>";
+                        }
+                        ?>
                     </div>
                 </div>
                 <div id="edu" class="tab-pane fade">
                     <div style="text-align: left;font-size: 1.4em">
-                        <p>1988.5  -1989.5  大同公司 網路組工讀</p>
-                        <p> 1989.7  -1991.5  預官第39期步兵排長 (陸軍步校（受訓）)(陸軍官校（資訊中心少尉教官）)</p>
-                        <p>1997.2  -1997.5  第28屆全國大專運動會資訊組 測試規劃負責人</p>
-                        <p> 1999.12 -2000.4  網路資料庫、程式設計班講師(青輔會委託中正大學辦理，共三梯次)</p>
-                        <p> 2002.8  -2003.1  澎湖技術學院 電算中心 系統作業與支援組 組長</p>
+                        <!--                        <p>1988.5 -1989.5 大同公司 網路組工讀</p>-->
+                        <!--                        <p> 1989.7 -1991.5 預官第39期步兵排長 (陸軍步校（受訓）)(陸軍官校（資訊中心少尉教官）)</p>-->
+                        <!--                        <p>1997.2 -1997.5 第28屆全國大專運動會資訊組 測試規劃負責人</p>-->
+                        <!--                        <p> 1999.12 -2000.4 網路資料庫、程式設計班講師(青輔會委託中正大學辦理，共三梯次)</p>-->
+                        <!--                        <p> 2002.8 -2003.1 澎湖技術學院 電算中心 系統作業與支援組 組長</p>-->
+                        <?php
+                        $sql = "SELECT * FROM `education` WHERE style = '2'";
+                        $result = mysqli_query($conn, $sql);
+                        //            mysqli_set_charset($conn,'utf8');
+                        $total = mysqli_num_rows($result);
+                        for ($i = 0; $i < $total; $i++) {
+                            $row = mysqli_fetch_row($result);
+                            echo " <h3>$row[1] $row[3]</h3>";
+                        }
+                        ?>
                     </div>
                 </div>
                 <div id="teach" class="tab-pane fade">
@@ -142,7 +162,7 @@ include ("menufunction.php");
                             <tr>
                                 <td>專任講師</td>
                                 <td>澎湖技術學院</td>
-                                <td>2000.8.1 -  2003.1.31</td>
+                                <td>2000.8.1 - 2003.1.31</td>
                                 <td>5 學期</td>
                             </tr>
                             <tr>
@@ -172,78 +192,115 @@ include ("menufunction.php");
                                 <td>3 學期</td>
                             </tr>
                         </table>
-<!--                        <p>(副字  第046300號103年8月起)</p>-->
-<!--                        <p>(助理字第009831號 92年2月起)</p>-->
-<!--                        <p>(講  字第48733號  85年7月起)</p>-->
+                        <!--                        <p>(副字  第046300號103年8月起)</p>-->
+                        <!--                        <p>(助理字第009831號 92年2月起)</p>-->
+                        <!--                        <p>(講  字第48733號  85年7月起)</p>-->
                     </div>
                 </div>
                 <div id="grounp" class="tab-pane fade">
                     <div style="text-align: left">
                         <table class="table table-hover" style="font-size: 1.5em">
-                            <tr>
-                                <td>台灣生物資訊學會</td>
-                                <td>永久會員 (2001.10起)</td>
-                            </tr>
-                            <tr>
-                                <td>社團法人台灣雲端計算學會</td>
-                                <td>永久會員 (2011.5.31起)</td>
-                            </tr>
-                            <tr>
-                                <td>台灣生物資訊與系統生物學會</td>
-                                <td>會員(2012)</td>
-                            </tr>
+                            <!--                            <tr>-->
+                            <!--                                <td>台灣生物資訊學會</td>-->
+                            <!--                                <td>永久會員 (2001.10起)</td>-->
+                            <!--                            </tr>-->
+                            <!--                            <tr>-->
+                            <!--                                <td>社團法人台灣雲端計算學會</td>-->
+                            <!--                                <td>永久會員 (2011.5.31起)</td>-->
+                            <!--                            </tr>-->
+                            <!--                            <tr>-->
+                            <!--                                <td>台灣生物資訊與系統生物學會</td>-->
+                            <!--                                <td>會員(2012)</td>-->
+                            <!--                            </tr>-->
+                            <?php
+                            $sql = "SELECT * FROM `education` WHERE style = '4'";
+                            $result = mysqli_query($conn, $sql);
+                            //            mysqli_set_charset($conn,'utf8');
+                            $total = mysqli_num_rows($result);
+                            for ($i = 0; $i < $total; $i++) {
+                                $row = mysqli_fetch_row($result);
+                                echo "<tr>";
+                                echo "<td>$row[1]</td>";
+                                if ($row[2] != null) {
+                                    echo "<td>$row[2]</td>";
+                                }
+                                if ($row[4] != null) {
+                                    echo "<td>$row[2]</td>";
+                                }
+                                echo "<td>$row[3]</td>";
+                                echo "</tr>";
+                            }
+                            ?>
                         </table>
                     </div>
                 </div>
-                <div id="speech" class="tab-pane fade">
-                    <div style="text-align: left">
-                    </div>
-                </div>
-                <div id="honor" class="tab-pane fade">
-                    <div style="text-align: left">
-                    </div>
-                </div>
+                <!--                <div id="speech" class="tab-pane fade">-->
+                <!--                    <div style="text-align: left">-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <div id="honor" class="tab-pane fade">-->
+                <!--                    <div style="text-align: left">-->
+                <!--                    </div>-->
+                <!--                </div>-->
                 <div id="other" class="tab-pane fade">
                     <div style="text-align: left">
+                        <table class="table table-hover" style="font-size: 1.5em">
+                            <?php
+                            $sql = "SELECT * FROM `education` WHERE style = '5'";
+                            $result = mysqli_query($conn, $sql);
+                            //            mysqli_set_charset($conn,'utf8');
+                            $total = mysqli_num_rows($result);
+                            for ($i = 0; $i < $total; $i++) {
+                                $row = mysqli_fetch_row($result);
+                                echo "<tr>";
+                                echo "<td>$row[1]</td>";
+                                if ($row[2] != null) {
+                                    echo "<td>$row[2]</td>";
+                                }
+                                echo "<td>$row[3]</td>";
+                                echo "</tr>";
+                            }
+                            ?>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-sm-4">
             <?php
-                Rightmenu();
+            Rightmenu();
             ?>
         </div>
     </div>
     <br>
 </div>
 <!--<div class="container text-center" style="background-color: rgb(255,255,255);font-size: 1.4em">-->
-    <div class="container text-center" id="footer">
-        <p><a href="#top">點我回頂端</a></p>
-        <p> Lin @Asia University 2017</p>
-    </div>
+<div class="container text-center" id="footer">
+    <p><a href="#top">點我回頂端</a></p>
+    <p> Lin @Asia University 2017</p>
+</div>
 
-    <!--<div class="container-fluid bg-3 text-center">-->
-    <!--<div class="row">-->
-    <!--<div class="col-sm-3">-->
-    <!--<p>Some text..</p>-->
-    <!--<img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">-->
-    <!--</div>-->
-    <!--<div class="col-sm-3">-->
-    <!--<p>Some text..</p>-->
-    <!--<img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">-->
-    <!--</div>-->
-    <!--<div class="col-sm-3">-->
-    <!--<p>Some text..</p>-->
-    <!--<img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">-->
-    <!--</div>-->
-    <!--<div class="col-sm-3">-->
-    <!--<p>Some text..</p>-->
-    <!--<img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="container-fluid text-center"> </div>-->
-    <!--</div><br><br>-->
+<!--<div class="container-fluid bg-3 text-center">-->
+<!--<div class="row">-->
+<!--<div class="col-sm-3">-->
+<!--<p>Some text..</p>-->
+<!--<img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">-->
+<!--</div>-->
+<!--<div class="col-sm-3">-->
+<!--<p>Some text..</p>-->
+<!--<img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">-->
+<!--</div>-->
+<!--<div class="col-sm-3">-->
+<!--<p>Some text..</p>-->
+<!--<img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">-->
+<!--</div>-->
+<!--<div class="col-sm-3">-->
+<!--<p>Some text..</p>-->
+<!--<img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="container-fluid text-center"> </div>-->
+<!--</div><br><br>-->
 
 </body>
 </html>

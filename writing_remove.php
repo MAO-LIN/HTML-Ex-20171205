@@ -1,9 +1,9 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: USER
- * Date: 2018/1/10
- * Time: 上午 10:08
+ * User: Saber
+ * Date: 2018/1/13
+ * Time: 下午 08:21
  */
 session_start();
 include("mysql_connect.php");
@@ -13,16 +13,16 @@ $number = $_POST['number'];
 if($_SESSION['id'])
 {
     //刪除資料庫資料語法
-    $sql = "delete from acadmid where id='$number'";
+    $sql = "delete from writing where id='$number'";
     if(mysqli_query($conn,$sql) && $number!=null)
     {
         echo '刪除成功!';
-        echo '<meta http-equiv=REFRESH CONTENT=2;url=control_Panel_academic.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=2;url=control_Panel_writing.php>';
     }
     else
     {
         echo '刪除失敗!';
-        echo '<meta http-equiv=REFRESH CONTENT=2;url=control_Panel_academic.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=2;url=control_Panel_writing.php>';
     }
 }
 else

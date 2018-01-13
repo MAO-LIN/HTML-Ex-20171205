@@ -110,7 +110,7 @@ include ("menufunction.php");
                                 $row=mysqli_fetch_row($result);
                                 echo "<h3 style=\"font-size:0.4em ;text-align: left\">".($i+1)."</h3>" ;
                                 echo "<h3 style=\"font-size:1em;font-weight:bold;text-align: left; border-bottom: solid;\">".$row[1]."</h3>";
-                                echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[2].",".$row[6].",".$row[4].",".$row[5].",".$row[7].",".$row[8].",".$row[10]."</h3>";
+                                echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[2]."，".$row[6]."，".$row[4]."，".$row[5]."，".$row[7]."，".$row[8]."，".$row[10]."</h3>";
                                 echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[3]."</h3>";
                                 echo "<br>";
                             }

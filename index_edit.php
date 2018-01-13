@@ -36,12 +36,12 @@ if($_SESSION['id']!= null)
         if(mysqli_query($conn,$sql))
         {
             echo '修改成功!';
-            echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
+            echo '<meta http-equiv=REFRESH CONTENT=2;url=control_Panel.php>';
         }
         else
         {
             echo '修改失敗!';
-            echo '<meta http-equiv=REFRESH CONTENT=2;url=index.php>';
+            echo '<meta http-equiv=REFRESH CONTENT=2;url=control_Panel.php>';
         }
 
     }else{
