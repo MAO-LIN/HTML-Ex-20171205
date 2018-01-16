@@ -49,39 +49,39 @@ include("mysql_connect.php");
             <form action="index_edit.php" method="POST">
                 <div class="form-group">
                     <label for="name" style="font-size: 1.5em">名字:</label>
-                    <input type="text" class="form-control" id="name" name="name" <?php echo"value=$row[1]"?>>
+                    <input type="text" class="form-control" id="name" name="name" <?php echo"value='$row[1]'"?>>
                 </div>
                 <div class="form-group">
                     <label for="university"  style="font-size: 1.5em">大學:</label>
-                    <input type="text" class="form-control" id="university"  name="university" <?php echo"value=$row[2]"?>>
+                    <input type="text" class="form-control" id="university"  name="university" <?php echo"value='$row[2]'"?>>
                 </div>
                 <div class="form-group">
                     <label for="department"  style="font-size: 1.5em">學系:</label>
-                    <input type="text" class="form-control" id="department" name="department" <?php echo"value=$row[3]"?>>
+                    <input type="text" class="form-control" id="department" name="department" <?php echo"value='$row[3]'"?>>
                 </div>
                 <div class="form-group">
                     <label for="position"  style="font-size: 1.5em">職位:</label>
-                    <input type="text" class="form-control" id="position" name="position" <?php echo"value=$row[4]"?>>
+                    <input type="text" class="form-control" id="position" name="position" <?php echo"value='$row[4]'"?>>
                 </div>
                 <div class="form-group">
                     <label for="education"  style="font-size: 1.5em">學歷:</label>
-                    <input type="text" class="form-control" id="education" name="education" <?php echo"value=$row[5]"?>>
+                    <input type="text" class="form-control" id="education" name="education" <?php echo"value='$row[5]'"?>>
                 </div>
                 <div class="form-group">
                     <label for="office"  style="font-size: 1.5em">辦公室:</label>
-                    <input type="text" class="form-control" id="office" name="office" <?php echo"value=$row[6]"?>>
+                    <input type="text" class="form-control" id="office" name="office" <?php echo"value='$row[6]'"?>>
                 </div>
                 <div class="form-group">
                     <label for="ext"  style="font-size: 1.5em">分機:</label>
-                    <input type="text" class="form-control" id="ext" name="ext" <?php echo"value=$row[7]"?>>
+                    <input type="text" class="form-control" id="ext" name="ext" <?php echo"value='$row[7]'"?>>
                 </div>
                 <div class="form-group">
                     <label for="email"  style="font-size: 1.5em">Email:</label>
-                    <input type="text" class="form-control" id="email" name="email" <?php echo"value=$row[8]"?>>
+                    <input type="text" class="form-control" id="email" name="email" <?php echo"value='$row[8]'"?>>
                 </div>
                 <div class="form-group">
                     <label for="research"  style="font-size: 1.5em">研究領域:</label>
-                    <input type="text" class="form-control" id="research" name="research" <?php echo"value=$row[9]"?>>
+                    <input type="text" class="form-control" id="research" name="research" <?php echo"value='$row[9]'"?>>
                 </div>
                 <div class="form-group">
                     <label for="other"  style="font-size: 1.5em">Other:</label>
@@ -92,7 +92,7 @@ include("mysql_connect.php");
         </div>
     </div>
 </div>
-<div class="container text-center" id="footer" style="background-color: white">
+<div class="container text-center" id="footer1" style="background-color: white">
     <p><a href="#top">點我回頂端</a></p>
     <p> Lin @Asia University 2017</p>
 </div>

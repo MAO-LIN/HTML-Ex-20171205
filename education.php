@@ -65,6 +65,11 @@ include("mysql_connect.php");
         </div>
     </div>
 </nav>
+<div class="container text-center" style="padding: 0">
+    <div style="max-height:400px ;overflow: hidden">
+        <img src="Image/background2_reSize.jpg" width="100%">
+    </div>
+</div>
 <!--<div class="container text-center" style="padding: 0">-->
 <!--    <div style="max-height:400px ;overflow: hidden">-->
 <!--        <img src="Image/background2_reSize.jpg" width="100%">-->
@@ -77,7 +82,7 @@ include("mysql_connect.php");
     <div>
         <span style="float: left"><a href="index.php">首頁</a></span>
         <span style="float: left;padding-left: 3px;padding-right: 3px"> > </span>
-        <span style="float: left;"><a href="writing.php">簡歷</a></span>
+        <span style="float: left;"><a href="education.php">簡歷</a></span>
     </div>
     <br>
     <div class="row">
@@ -96,46 +101,40 @@ include("mysql_connect.php");
             <div class="tab-content">
                 <div id="home" class="tab-pane fade in active">
                     <div style="text-align: left">
-                        <!--                        <h3>沙鹿國小 (1972.9-1978.6)</h3>-->
-                        <!---->
-                        <!--                        <h3>沙鹿國中 (1978.9-1981.6)</h3>-->
-                        <!---->
-                        <!--                        <h3> 台中一中 (1981.9-1984.6)</h3>-->
-                        <!---->
-                        <!--                        <h3> 大同工學院資訊工程系   (1985.9-1989.6)</h3>-->
-                        <!---->
-                        <!--                        <h3> 中正大學資訊工程所 碩士(1991.9-1993.6)</h3>-->
-                        <!---->
-                        <!--                        <h3> 中正大學資訊工程所 博士(1993.9-2002.6)</h3>-->
-                        <?php
-                        $sql = "SELECT * FROM `education` WHERE style = '1'";
-                        $result = mysqli_query($conn, $sql);
-                        //            mysqli_set_charset($conn,'utf8');
-                        $total = mysqli_num_rows($result);
-                        for ($i = 0; $i < $total; $i++) {
-                            $row = mysqli_fetch_row($result);
-                            echo " <h3>$row[1] $row[3]</h3>";
-                        }
-                        ?>
+                        <table class="table table-hover" style="font-size: 1.5em">
+                            <?php
+                            $sql = "SELECT * FROM `education` WHERE style = '1'";
+                            $result = mysqli_query($conn, $sql);
+                            //            mysqli_set_charset($conn,'utf8');
+                            $total = mysqli_num_rows($result);
+                            for ($i = 0; $i < $total; $i++) {
+                                $row = mysqli_fetch_row($result);
+                                echo "<tr>";
+                                echo "<td>$row[1]</td>";
+                                echo "<td>$row[3]</td>";
+                                echo "</tr>";
+                            }
+                            ?>
+                        </table>
                     </div>
                 </div>
                 <div id="edu" class="tab-pane fade">
-                    <div style="text-align: left;font-size: 1.4em">
-                        <!--                        <p>1988.5 -1989.5 大同公司 網路組工讀</p>-->
-                        <!--                        <p> 1989.7 -1991.5 預官第39期步兵排長 (陸軍步校（受訓）)(陸軍官校（資訊中心少尉教官）)</p>-->
-                        <!--                        <p>1997.2 -1997.5 第28屆全國大專運動會資訊組 測試規劃負責人</p>-->
-                        <!--                        <p> 1999.12 -2000.4 網路資料庫、程式設計班講師(青輔會委託中正大學辦理，共三梯次)</p>-->
-                        <!--                        <p> 2002.8 -2003.1 澎湖技術學院 電算中心 系統作業與支援組 組長</p>-->
-                        <?php
-                        $sql = "SELECT * FROM `education` WHERE style = '2'";
-                        $result = mysqli_query($conn, $sql);
-                        //            mysqli_set_charset($conn,'utf8');
-                        $total = mysqli_num_rows($result);
-                        for ($i = 0; $i < $total; $i++) {
-                            $row = mysqli_fetch_row($result);
-                            echo " <h3>$row[1] $row[3]</h3>";
-                        }
-                        ?>
+                    <div style="text-align: left">
+                        <table class="table table-hover" style="font-size: 1.5em">
+                            <?php
+                            $sql = "SELECT * FROM `education` WHERE style = '2'";
+                            $result = mysqli_query($conn, $sql);
+                            //            mysqli_set_charset($conn,'utf8');
+                            $total = mysqli_num_rows($result);
+                            for ($i = 0; $i < $total; $i++) {
+                                $row = mysqli_fetch_row($result);
+                                echo "<tr>";
+                                echo "<td>$row[1]</td>";
+                                echo "<td>$row[3]</td>";
+                                echo "</tr>";
+                            }
+                            ?>
+                        </table>
                     </div>
                 </div>
                 <div id="teach" class="tab-pane fade">

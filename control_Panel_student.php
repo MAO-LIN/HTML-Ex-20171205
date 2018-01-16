@@ -77,50 +77,64 @@ include("mysql_connect.php");
     <br>
     <div class="row">
         <div class="col-sm-2">
-            <?php menu(4); ?>
+            <?php menu(5); ?>
         </div>
         <div class="col-sm-10">
             <div style="margin: 10px 10px 10px 10px ">
                 <?php
                 include("mysql_connect.php");
-                $sql = "SELECT * FROM `writing`";
+                $sql = "SELECT * FROM `student`";
                 $result = mysqli_query($conn, $sql);
                 $total = mysqli_num_rows($result);
                 ?>
                 <div style="margin-bottom: 10px">
-                    <form style="display: inline" action="writing_add_form.php" method="POST">
+                    <form style="display: inline" action="student_add_form.php" method="POST">
                         <input type="hidden" name="no" <?php echo "value='$total'" ?>>
                         <button type="submit" class="btn btn-success btn-lg">新增</button>
                     </form>
                 </div>
                 <h3 style="font-size: 1.4em;text-align: left">共<?php echo"$total" ?>筆資料</h3>
-                <?php
-                for ($i = 0; $i < $total; $i++) {
-                    ?>
-                    <div style="background-color: white;padding: 10px 10px 10px;margin-bottom: 10px ">
+                <div style="text-align: left">
+                    <table class="table table-hover" style="font-size: 1.2em;">
+                        <tr>
+                            <th>學年</th>
+                            <th>系所</th>
+                            <th>姓名</th>
+                            <th>題目</th>
+                            <th>備註</th>
+                            <th></th>
+                        </tr>
                         <?php
-                        $row = mysqli_fetch_row($result);
-                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">" . ($i + 1) .'.'."</h3>";
-                        echo "<h3 style=\"font-size:1.5em;font-weight:bold;text-align: left; border-bottom: solid;\">".$row[1]."</h3>";
-                        echo "<h3 style=\"font-size:1.2em ;text-align: left\">".$row[2]."，".$row[6]."，".$row[4]."，".$row[5]."，".$row[7]."，".$row[8]."，".$row[10]."</h3>";
-                        echo "<br>";
-                        echo "<b><h3 style=\"font-size:1.2em ;text-align: left\">".$row[6]."</h3></b>";
-                        echo "<br>";
+                        $sql = "SELECT * FROM `student`";
+                        $result = mysqli_query($conn, $sql);
+                        //            mysqli_set_charset($conn,'utf8');
+                        $total = mysqli_num_rows($result);
+                        for ($i = 0; $i < $total; $i++) {
+                            $row = mysqli_fetch_row($result);
+                            echo "<tr style='background-color: rgb(255,216,229);border: solid'>";
+                            echo "<td>$row[1]</td>";
+                            echo "<td>$row[2]</td>";
+                            echo "<td>$row[3]</td>";
+                            echo "<td>$row[4]</td>";
+                            echo "<td>$row[5]</td>";
+                            ?>
+                            <td>
+                                <form style="display: inline" action="student_edit_form.php" method="POST">
+                                    <?php echo "<input type='hidden' name='number' value='$row[0]' >" ?>
+                                    <button type="submit" class="btn btn-primary btn-lg">修改</button>
+                                </form>
+                                <form style="display: inline" action="student_remove.php" method="POST">
+                                    <?php echo "<input type='hidden' name='number' value='$row[0]'>" ?>
+                                    <input type="submit" class="btn btn-danger btn-lg" name="delkind" value="刪除"
+                                           onClick="tfm_confirmLink('您真的確定要刪除嗎？');return document.MM_returnValue"/>
+                                </form>
+                            </td>
+                            <?php
+                            echo "</tr>";
+                        }
                         ?>
-                        <form style="display: inline"  action="writing_edit_form.php" method="POST">
-                            <?php echo "<input type='hidden' name='number' value='$row[0]' >" ?>
-                            <button type="submit" class="btn btn-primary btn-lg">修改</button>
-                        </form>
-                        <form style="display: inline" action="writing_remove.php" method="POST">
-                            <?php echo "<input type='hidden' name='number' value='$row[0]'>" ?>
-                            <!--                                <button type="submit" class="btn btn-primary btn-md" onclick="remove('您真的確定要刪除嗎？');return document.MM_returnValue">-->
-                            <input type="submit" class="btn btn-danger btn-lg" name="delkind" value="刪除"
-                                   onClick="tfm_confirmLink('您真的確定要刪除嗎？');return document.MM_returnValue"/>
-                        </form>
-                    </div>
-                    <?php
-                }
-                ?>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

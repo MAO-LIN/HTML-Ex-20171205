@@ -69,7 +69,7 @@ include("mysql_connect.php");
     <div>
         <span style="float: left"><a href="index.php">首頁</a></span>
         <span style="float: left;padding-left: 3px;padding-right: 3px"> > </span>
-        <span style="float: left;"><a href="writing.php">簡歷</a></span>
+        <span style="float: left;"><a href="control_Panel.php">控制台</a></span>
     </div>
     <br>
     <div class="row">

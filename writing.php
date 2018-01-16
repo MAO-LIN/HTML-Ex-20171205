@@ -7,8 +7,8 @@
  */
 
 session_start();
-include ("function.php");
-include ("menufunction.php");
+include("function.php");
+include("menufunction.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +45,7 @@ include ("menufunction.php");
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a><img src="Image/Asiaa_Logo.png" style="width:3.7em;padding: 0;margin: 0;" ></a>
+            <a><img src="Image/Asiaa_Logo.png" style="width:3.7em;padding: 0;margin: 0;"></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <?php
@@ -53,11 +53,10 @@ include ("menufunction.php");
             ?>
             <ul class="nav navbar-nav navbar-right">
                 <?php
-                if($_SESSION['id']!=null) {
-                    echo" <li><a href='logout.php'><span class='glyphicon glyphicon-log-out'></span> Logout</a></li>";
-                }
-                else{
-                    echo"<li><a href='login.html'><span class='glyphicon glyphicon-log-in'></span> Login</a></li>";
+                if ($_SESSION['id'] != null) {
+                    echo " <li><a href='logout.php'><span class='glyphicon glyphicon-log-out'></span> Logout</a></li>";
+                } else {
+                    echo "<li><a href='login.html'><span class='glyphicon glyphicon-log-in'></span> Login</a></li>";
                 }
                 ?>
 
@@ -81,102 +80,82 @@ include ("menufunction.php");
     <br/>
     <div class="row">
         <div class="col-sm-8">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#home">著作</a></li>
-                        <?php
-                        if($_SESSION['id']!=null) {
-                            ?>
+            <ul class="nav nav-tabs">
+                <li class="active" style="font-size: 1.5em"><a data-toggle="tab" href="#home">Journal</a></li>
+                <li style="font-size: 1.5em"><a data-toggle="tab" href="#menu1">International Conference</a></li>
+                <li style="font-size: 1.5em"><a data-toggle="tab" href="#menu2">Domestic Conference</a></li>
+            </ul>
 
-                            <li><a data-toggle="tab" href="#menu1">新增</a></li>
-                            <?php
-                        }
-                        ?>
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
 
-                    </ul>
+                    <?php
+                    include("mysql_connect.php");
+                    //                            $id=$_POST['id'];
+                    //                            $pw=sha1($_POST['pwd']);
+                    $sql = "SELECT * FROM `writing` WHERE style='1'";
+                    $result = mysqli_query($conn, $sql);
+                    //                            $row=mysqli_fetch_row($result);
+                    $total = mysqli_num_rows($result);
+                    for ($i = 0; $i < $total; $i++) {
+                        echo "<div style='background-color: white;padding:10px 10px;border-radius:10px;margin-top: 10px;'>";
+                        $row = mysqli_fetch_row($result);
+//                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">" . ($i + 1) . "." .  "</h3>";
+                        echo "<h3 style=\"font-size:1.4em;font-weight:bold;text-align: left; border-bottom: solid;\">" . $row[1] . "</h3>";
+                        echo "<h3 style=\"font-size:1em ;text-align: left\">" . $row[2] . "，" . $row[6] . "，" . $row[4] . "，" . $row[5] . "，" . $row[7] . "，" . $row[8] . "，" . $row[10] . "</h3>";
+                        echo "<h3 style=\"font-size:1em ;text-align: left\">" . $row[3] . "</h3>";
+                        echo "</div>";
+                    }
+                    ?>
 
-                    <div class="tab-content">
-                        <div id="home" class="tab-pane fade in active">
+                </div>
+                <div id="menu1" class="tab-pane fade">
 
-                        <?php
-                            include("mysql_connect.php");
-//                            $id=$_POST['id'];
-//                            $pw=sha1($_POST['pwd']);
-                            $sql="SELECT * FROM `writing`";
-                            $result=mysqli_query($conn,$sql);
-//                            $row=mysqli_fetch_row($result);
-                            $total=mysqli_num_rows($result);
-                            echo $row[0];
-                            for($i=0;$i<$total;$i++){
-                                $row=mysqli_fetch_row($result);
-                                echo "<h3 style=\"font-size:0.4em ;text-align: left\">".($i+1)."</h3>" ;
-                                echo "<h3 style=\"font-size:1em;font-weight:bold;text-align: left; border-bottom: solid;\">".$row[1]."</h3>";
-                                echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[2]."，".$row[6]."，".$row[4]."，".$row[5]."，".$row[7]."，".$row[8]."，".$row[10]."</h3>";
-                                echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[3]."</h3>";
-                                echo "<br>";
-                            }
-//                            if($id!=null&&$pw!=null&&$row[0]==$id&&$row[2]==$pw){
-//                            $_SESSION['id'] = $id;
-//                            echo'Login successfully'. '<br>';
-//                            }
-//                            else{
-//                            echo'Login failed';
-//                            }
-                        ?>
+                    <?php
+                    include("mysql_connect.php");
+                    //                            $id=$_POST['id'];
+                    //                            $pw=sha1($_POST['pwd']);
+                    $sql = "SELECT * FROM `writing` WHERE style='2'";
+                    $result = mysqli_query($conn, $sql);
+                    //                            $row=mysqli_fetch_row($result);
+                    $total = mysqli_num_rows($result);
+                    for ($i = 0; $i < $total; $i++) {
+                        $row = mysqli_fetch_row($result);
+                        echo "<div style='background-color: white;padding:10px 10px;border-radius:10px;margin-top: 10px;'>";
+//                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">" . ($i + 1)."." . "</h3>";
+                        echo "<h3 style=\"font-size:1.4em;font-weight:bold;text-align: left; border-bottom: solid;\">" . $row[1] . "</h3>";
+                        echo "<h3 style=\"font-size:1em ;text-align: left\">" . $row[2] . "，" . $row[6] . "，" . $row[4] . "，" . $row[5] . "，" . $row[7] . "，" . $row[8] . "，" . $row[10] . "</h3>";
+                        echo "<h3 style=\"font-size:1em ;text-align: left\">" . $row[3] . "</h3>";
+                        echo "</div>";
+                        echo "<br>";
+                    }
+                    ?>
 
-                        </div>
-                        <?php
-                        if($_SESSION['id']!=null) {
-                            ?>
-                            <div id="menu1" class="tab-pane fade">
-                                <form action="writing_add.php" method="POST">
-                                    <div class="form-group">
-                                        <label for="name">論文名稱:</label>
-                                        <input type="text" class="form-control" id="name" name="name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="author">作者:</label>
-                                        <input type="text" class="form-control" id="author"  name="author">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="enterprise">單位:</label>
-                                        <input type="text" class="form-control" id="enterprise" name="enterprise">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="vol">Vol:</label>
-                                        <input type="text" class="form-control" id="vol" name="vol">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="no">No:</label>
-                                        <input type="text" class="form-control" id="no" name="no">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="page">頁數:</label>
-                                        <input type="text" class="form-control" id="page" name="page">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="date">日期:</label>
-                                        <input type="text" class="form-control" id="date" name="date">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="runNumber">流水號:</label>
-                                        <input type="text" class="form-control" id="runNumber" name="runNumber">
-                                    </div>
+                </div>
+                <div id="menu2" class="tab-pane fade">
 
-                                    <div class="form-group">
-                                        <label for="style">style</label>
-                                        <select class="form-control" id="style" name="style">
-                                            <option value="1">Journal</option>
-                                            <option value="2">International Conference</option>
-                                            <option value="3">Domestic Conference</option>
-                                        </select>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary btn-md">新增</button>
-                                </form>
-                            </div>
-                            <?php
-                             }
-                             ?>
-                    </div>
+                    <?php
+                    include("mysql_connect.php");
+                    //                            $id=$_POST['id'];
+                    //                            $pw=sha1($_POST['pwd']);
+                    $sql = "SELECT * FROM `writing` WHERE style='3'";
+                    $result = mysqli_query($conn, $sql);
+                    //                            $row=mysqli_fetch_row($result);
+                    $total = mysqli_num_rows($result);
+                    for ($i = 0; $i < $total; $i++) {
+                        $row = mysqli_fetch_row($result);
+                        echo "<div style='background-color: white;padding:10px 10px;border-radius:10px;margin-top: 10px;'>";
+//                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">" . ($i + 1) ."." . "</h3>";
+                        echo "<h3 style=\"font-size:1.4em;font-weight:bold;text-align: left; border-bottom: solid;\">" . $row[1] . "</h3>";
+                        echo "<h3 style=\"font-size:1em ;text-align: left\">" . $row[2] . "，" . $row[6] . "，" . $row[4] . "，" . $row[5] . "，" . $row[7] . "，" . $row[8] . "，" . $row[10] . "</h3>";
+                        echo "<h3 style=\"font-size:1em ;text-align: left\">" . $row[3] . "</h3>";
+                        echo "</div>";
+                        echo "<br>";
+                    }
+                    ?>
+
+                </div>
+            </div>
         </div>
         <div class="col-sm-4">
             <?php

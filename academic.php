@@ -6,8 +6,8 @@
  * Time: 下午 11:57
  */
 session_start();
-include ("function.php");
-include ("menufunction.php");
+include("function.php");
+include("menufunction.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +44,7 @@ include ("menufunction.php");
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a><img src="Image/Asiaa_Logo.png" style="width:3.7em;padding: 0;margin: 0;" ></a>
+            <a><img src="Image/Asiaa_Logo.png" style="width:3.7em;padding: 0;margin: 0;"></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <?php
@@ -52,10 +52,9 @@ include ("menufunction.php");
             ?>
             <ul class="nav navbar-nav navbar-right">
                 <?php
-                if($_SESSION['id']!=null) {
+                if ($_SESSION['id'] != null) {
                     echo " <li><a href='logout.php'><span class='glyphicon glyphicon-log-out'></span>Logout</a></li>";
-                }
-                else{
+                } else {
                     echo " <li><a href='login.html'><span class='glyphicon glyphicon-log-in'></span>Login</a></li>";
                 }
                 ?>
@@ -68,132 +67,55 @@ include ("menufunction.php");
         <img src="Image/background2_reSize.jpg" width="100%">
     </div>
 </div>
-<!--<div class="container" style="padding: 0;background-color: rgb(255,255,255);text-align: left">-->
-<!--    <p><a href="index.php">首頁</a></p>-->
-<!--</div>-->
 <?php
 centerTitle(3);
 ?>
+
 <div class="container bg-3 text-center" style="background-color: rgb(228,228,228)">
-    <p style="text-align: left"><a href="index.php">首頁</a></p>
-    <!--    <br>-->
+    <span style="float: left"><a href="index.php">首頁</a></span>
+    <span style="float: left;padding-left: 3px;padding-right: 3px"> > </span>
+    <span style="float: left;"><a href="academic.php">學術</a></span>
+    <br/>
     <div class="row">
         <div class="col-sm-8">
             <div>
                 <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#home">學術</a></li>
-                    <?php
-                    if($_SESSION['id']!=null) {
-                        ?>
-                        <li><a data-toggle="tab" href="#add">新增</a></li>
-                        <li><a data-toggle="tab" href="#edit">修改</a></li>
-                        <li><a data-toggle="tab" href="#remove">刪除</a></li>
-                        <?php
-                    }
-                    ?>
+                    <li class="active" style="font-size: 1.5em"><a data-toggle="tab" href="#home">學術</a></li>
+                    <!--                    --><?php
+                    //                    if($_SESSION['id']!=null) {
+                    //                        ?>
+                    <!--                        <li><a data-toggle="tab" href="#add">新增</a></li>-->
+                    <!--                        <li><a data-toggle="tab" href="#edit">修改</a></li>-->
+                    <!--                        <li><a data-toggle="tab" href="#remove">刪除</a></li>-->
+                    <!--                        --><?php
+                    //                    }
+                    //                    ?>
                 </ul>
                 <div class="tab-content">
                     <div id="home" class="tab-pane fade in active">
-                <table class="table table-bordered">
-                    <tbody>
-                    <?php
-                    include("mysql_connect.php");
-                    $sql="SELECT * FROM `acadmid`";
-                    $result=mysqli_query($conn,$sql);
-                    $total=mysqli_num_rows($result);
-                    for($i=0;$i<$total;$i++){
-                        $row=mysqli_fetch_row($result);
-                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">".($i+1)."</h3>" ;
-                        echo "<h3 style=\"font-size:1em;font-weight:bold;text-align: left; border-bottom: solid;\">".$row[0]."</h3>";
-                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[1].",".$row[2]."</h3>";
-                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[2]."</h3>";
-                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[3]."</h3>";
-                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[4]."</h3>";
-                        echo "<h3 style=\"font-size:0.4em ;text-align: left\">".$row[5]."</h3>";
-                        echo "<br>";
-                    }
-                    ?>
-                    </tbody>
-                </table>
-                    </div>
-                    <div id="add" class="tab-pane fade">
-<!--                        --><?php
-//                        if($_SESSION['id']!=null) {
-//                            ?>
-                                <form action="academic_add.php" method="POST">
-                                    <div class="form-group">
-                                        <label for="title">計畫名稱:</label>
-                                        <input type="text" class="form-control" id="title" name="title">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="number">計畫編號:</label>
-                                        <input type="text" class="form-control" id="number"  name="number">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="date">計畫執行起迄:</label>
-                                        <input type="text" class="form-control" id="date" name="date">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="money">核定金額:</label>
-                                        <input type="text" class="form-control" id="money" name="money">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="position">擔任職務:</label>
-                                        <input type="text" class="form-control" id="position" name="position">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="other">其他:</label>
-                                        <input type="text" class="form-control" id="other" name="other">
-                                    </div>
-                                    <button type="submit" class="btn btn-primary btn-md">新增</button>
-                                </form>
-<!--                            --><?php
-//                        }
-//                        ?>
-                    </div>
-                    <div id="edit" class="tab-pane fade">
-<!--                        --><?php
-                        //                        if($_SESSION['id']!=null) {
-                        //                            ?>
-                        <form action="academic_add.php" method="POST">
-                            <div class="form-group">
-                                <label for="title">計畫名稱:</label>
-                                <input type="text" class="form-control" id="title" name="title">
-                            </div>
-                            <div class="form-group">
-                                <label for="number">計畫編號:</label>
-                                <input type="text" class="form-control" id="number"  name="number">
-                            </div>
-                            <div class="form-group">
-                                <label for="date">計畫執行起迄:</label>
-                                <input type="text" class="form-control" id="date" name="date">
-                            </div>
-                            <div class="form-group">
-                                <label for="money">核定金額:</label>
-                                <input type="text" class="form-control" id="money" name="money">
-                            </div>
-                            <div class="form-group">
-                                <label for="position">擔任職務:</label>
-                                <input type="text" class="form-control" id="position" name="position">
-                            </div>
-                            <div class="form-group">
-                                <label for="other">其他:</label>
-                                <input type="text" class="form-control" id="other" name="other">
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-md">新增</button>
-                        </form>
-                        <!--                            --><?php
-                        //                        }
-                        //                        ?>
-                    </div>
-                    <div id="remove" class="tab-pane fade">
-                        <form action="academic_remove.php" method="POST">
-                            <div class="form-group">
-                                <label for="number">計畫編號:</label>
-                                <input type="text" class="form-control" id="number" name="number">
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-md">刪除</button>
-                        </form>
+                        <table class="table table-bordered">
+                            <tbody>
+                            <?php
+                            include("mysql_connect.php");
+                            $sql = "SELECT * FROM `acadmid`";
+                            $result = mysqli_query($conn, $sql);
+                            $total = mysqli_num_rows($result);
+                            for ($i = 0; $i < $total; $i++) {
+                                echo"<div style='background-color: white;padding: 10px 10px;margin-top: 10px;'>";
+                                $row = mysqli_fetch_row($result);
+                                echo "<h3 style=\"font-size:0.4em ;text-align: left\">" . ($i + 1) . "</h3>";
+                                echo "<h3 style=\"font-size:1.4em;font-weight:bold;text-align: left; border-bottom: solid;\">" . $row[0] . "</h3>";
+                                echo "<h3 style=\"font-size:1em ;text-align: left\">" . $row[1] . "," . $row[2] . "</h3>";
+                                echo "<h3 style=\"font-size:1em ;text-align: left\">" . $row[2] . "</h3>";
+                                echo "<h3 style=\"font-size:1em ;text-align: left\">" . $row[3] . "</h3>";
+                                echo "<h3 style=\"font-size:1em ;text-align: left\">" . $row[4] . "</h3>";
+                                echo "<h3 style=\"font-size:1em ;text-align: left\">" . $row[5] . "</h3>";
+                                echo"</div>";
+//                                echo "<br>";
+                            }
+                            ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

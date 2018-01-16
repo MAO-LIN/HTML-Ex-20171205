@@ -8,6 +8,7 @@
 session_start();
 include ("function.php");
 include ("menufunction.php");
+include ("mysql_connect.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -90,54 +91,76 @@ centerTitle(6);
                     <tr>
                         <th style="background-color:#be6240"> English Learning</th>
                     </tr>
-                    <tr>
-                        <td><a href="https://www.liveabc.com/site/Online_Store/member/ok3.asp">LiveABC</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://mws.ust.hk/mw/account/login.php">My Words</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://wordneighbors.ust.hk/">Word Neighbors</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://egg.ust.hk/cl3/index.html">EGG ( English Grammar Guide)</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://www.ted.com/">TED (Technology, Entertainment, Design)</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://quod.lib.umich.edu/m/micase/">MICASE (Michigan Corpus of Academic Spoken English)</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://www.pbs.org/">PBS (Public Broadcasting Service)</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://hk.dictionary.yahoo.com/">Yahoo!字典</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://www.netspeak.org/">netspeak</a></td>
-                    </tr>
+<!--                    <tr>-->
+<!--                        <td><a href="https://www.liveabc.com/site/Online_Store/member/ok3.asp">LiveABC</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://mws.ust.hk/mw/account/login.php">My Words</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://wordneighbors.ust.hk/">Word Neighbors</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://egg.ust.hk/cl3/index.html">EGG ( English Grammar Guide)</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://www.ted.com/">TED (Technology, Entertainment, Design)</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://quod.lib.umich.edu/m/micase/">MICASE (Michigan Corpus of Academic Spoken English)</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://www.pbs.org/">PBS (Public Broadcasting Service)</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://hk.dictionary.yahoo.com/">Yahoo!字典</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://www.netspeak.org/">netspeak</a></td>-->
+<!--                    </tr>-->
+                    <?php
+                    $sql = "SELECT * FROM `links` WHERE style = '1' ";
+                    $result = mysqli_query($conn, $sql);
+                    $total = mysqli_num_rows($result);
+                    for ($i = 0; $i < $total; $i++) {
+                        $row = mysqli_fetch_row($result);
+                        echo "<tr>";
+                        echo "<td><a href='$row[2]'>$row[1]</a>";
+                        echo "</td></tr>";
+                    }
+                    ?>
                     <tr>
                         <th style="background-color:#8bb9b0"> 其他連結</th>
                     </tr>
-                    <tr>
-                        <td><a href="http://data.gov.tw/">政府資料開法平台</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://www.internationalgenome.org/">The 1000 genomes project</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="ftp://ftp.ncbi.nih.gov/genomes/Viruses/">Viruses FTP</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://ictvdb.cumc.columbia.edu/">ICTVdB:The Universal Database of the International Committee on Taxonomy of Viruses</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=advisors">Contributors to the GenBank Taxonomy Database</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="http://talk.ictvonline.org/files/ictv_documents/m/msl/1231/download.aspx">ICTV Master Species List 2009 - Version 7</a></td>
-                    </tr>
+<!--                    <tr>-->
+<!--                        <td><a href="http://data.gov.tw/">政府資料開法平台</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://www.internationalgenome.org/">The 1000 genomes project</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="ftp://ftp.ncbi.nih.gov/genomes/Viruses/">Viruses FTP</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://ictvdb.cumc.columbia.edu/">ICTVdB:The Universal Database of the International Committee on Taxonomy of Viruses</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=advisors">Contributors to the GenBank Taxonomy Database</a></td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td><a href="http://talk.ictvonline.org/files/ictv_documents/m/msl/1231/download.aspx">ICTV Master Species List 2009 - Version 7</a></td>-->
+<!--                    </tr>-->
+                    <?php
+                    $sql = "SELECT * FROM `links` WHERE style = '2' ";
+                    $result = mysqli_query($conn, $sql);
+                    $total = mysqli_num_rows($result);
+                    for ($i = 0; $i < $total; $i++) {
+                        $row = mysqli_fetch_row($result);
+                        echo "<tr>";
+                        echo "<td><a href='$row[2]'>$row[1]</a>";
+                        echo "</td></tr>";
+                    }
+                    ?>
                     </tbody>
                 </table>
             </div>

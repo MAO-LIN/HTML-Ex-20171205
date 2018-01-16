@@ -8,6 +8,7 @@
 session_start();
 include ("function.php");
 include ("menufunction.php");
+include ("mysql_connect.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,166 +84,38 @@ include ("menufunction.php");
 centerTitle(5);
 ?>
 <div class="container bg-3 text-center" style="background-color: rgb(228,228,228)">
-    <p style="text-align: left"><a href="index.php">首頁</a></p>
-    <!--    <br>-->
+    <span style="float: left"><a href="index.php">首頁</a></span>
+    <span style="float: left;padding-left: 3px;padding-right: 3px"> > </span>
+    <span style="float: left;"><a href="student.php">學生</a></span>
+    <br/>
     <div class="row">
         <div class="col-sm-8">
-            <div>
-               <table class="table table-hover">
-                   <thead>
-                   <tr>
-                       <th>學年</th>
-                       <th>系所</th>
-                       <th>姓名</th>
-                       <th>論文題目</th>
-                       <th>備註</th>
-                   </tr>
-                   </thead>
-                   <tbody>
-                   <tr>
-                       <td>102</td>
-                       <td>資訊工程所 (博士班)</td>
-                       <td>Heri Wijayanto</td>
-                       <td></td>
-                       <td>(Indonesia)</td>
-                   </tr>
-                   <tr>
-                       <td rowspan="3">101</td>
-                       <td rowspan="6">資訊工程所</td>
-                       <td>陳彥棠</td>
-                       <td>提升 Hadoop MapReduce 計算效能之研究-以抽取樣式歷史為例
-                           (Promoting the Computational Performance of Hadoop MapReduce for Pattern History Extraction)</td>
-                       <td></td>
-                   </tr>
-                   <tr>
-<!--                       <td></td>-->
-<!--                       <td></td>-->
-                       <td>蔣中凱</td>
-                       <td>樣式歷史資料之形狀查詢-藉由Haar小波
-                           (Shape Query for Pattern History via Haar Wavelet)</td>
-                       <td></td>
-                   </tr>
-                   <tr>
-<!--                       <td></td>-->
-<!--                       <td></td>-->
-                       <td>郭佳霖</td>
-                       <td>社群網站使用者上線時段分析-以批踢踢為例</td>
-                       <td>為例	(2014.6畢業)(102學年度)</td>
-                   </tr>
-                   <tr>
-                       <td rowspan="2">99</td>
-<!--                       <td></td>-->
-                       <td>吳健瑋</td>
-                       <td>利用 Hadoop 建立樣式歷史資料趨勢索引</td>
-                       <td>(2014.6畢業)(102學年度)</td>
-                   </tr>
-                   <tr>
-<!--                       <td></td>-->
-<!--                       <td></td>-->
-                       <td>許柏凱</td>
-                       <td></td>
-                       <td></td>
-                   </tr>
-                   <tr>
-                       <td rowspan="3">97</td>
-<!--                       <td></td>-->
-                       <td>施耀竣</td>
-                       <td>分類架構模糊度研究-利用鄰近點亂度</td>
-                       <td>(2010.6畢業)(98學年度)</td>
-                   </tr>
-                   <tr>
-<!--                       <td></td>-->
-                       <td>生物資訊所</td>
-                       <td>黃進福</td>
-                       <td>病毒分類研究-藉由基因體序列</td>
-                       <td>(2011.6畢業)(99學年度)</td>
-                   </tr>
-                   <tr>
-<!--                       <td></td>-->
-                       <td>資訊工程所</td>
-                       <td>Arie Budiansyah</td>
-                       <td>Text Trend Analysis from Indonesia Newspaper</td>
-                       <td>(2010.6畢業)(98學年度)(Indonesia)</td>
-                   </tr>
-                   <tr>
-                       <td rowspan="2">96</td>
-                       <td>電腦與通訊所</td>
-                       <td>廖益緯</td>
-                       <td>關鍵字之趨勢研究-藉由PubMed文獻</td>
-                       <td>(2010.6畢業)(98學年度)</td>
-                   </tr>
-                   <tr>
-<!--                       <td></td>-->
-                       <td>資訊工程所</td>
-                       <td>劉宣榮</td>
-                       <td>中華民國專利趨勢查詢-藉由顯要事件歷史</td>
-                       <td>(2010.6畢業)(98學年度)</td>
-                   </tr>
-                   <tr>
-                       <td rowspan="3">95</td>
-                       <td>資訊工程所</td>
-                       <td>盧勇凱</td>
-                       <td>病毒分類研究-藉由CDS序列</td>
-                       <td>(2011.6畢業)(99學年度)</td>
-                   </tr>
-                   <tr>
-<!--                       <td></td>-->
-                       <td rowspan="5">生物資訊所</td>
-                       <td>許瀚升</td>
-                       <td>水稻T-DNA插入突變體右翼序列自動化比對系統之建立</td>
-                       <td>(2008.6畢業)(96學年度)</td>
-                   </tr>
-                   <tr>
-<!--                       <td></td>-->
-<!--                       <td></td>-->
-                       <td>魏子傑</td>
-                       <td>癌症類別關連研究-藉由生物晶片分析</td>
-                       <td></td>
-                   </tr>
-                   <tr>
-                       <td>94</td>
-<!--                       <td></td>-->
-                       <td>沈晉億</td>
-                       <td>古菌與甲烷代謝有關之獨特胺基酸序列的挖掘--藉由基因體比較</td>
-                       <td>(2008.1畢業)(96學年度)</td>
-                   </tr>
-                   <tr>
-                       <td rowspan="2">93</td>
-<!--                       <td></td>-->
-                       <td>張文福</td>
-                       <td>古菌基因體相關於氧氣需求的研究</td>
-                       <td>(2007.6畢業)(95學年度)</td>
-                   </tr>
-                   <tr>
-<!--                       <td></td>-->
-<!--                       <td></td>-->
-                       <td>鄒佳芳</td>
-                       <td></td>
-                       <td></td>
-                   </tr>
-                   <tr>
-                       <td rowspan="3">92</td>
-                       <td rowspan="2">資訊工程所</td>
-                       <td>曾冠燕</td>
-                       <td>生物資訊文獻查詢-利用文件相似度</td>
-                       <td>(2008.1畢業)(96學年度)</td>
-                   </tr>
-                   <tr>
-<!--                       <td></td>-->
-<!--                       <td></td>-->
-                       <td>楊季剛</td>
-                       <td>中文新聞相關性事件之挖掘-藉由Haar小波轉換</td>
-                       <td>(2007.1畢業)(95學年度)</td>
-                   </tr>
-                   <tr>
-<!--                       <td></td>-->
-                       <td>生物資訊所</td>
-                       <td>林炯璁</td>
-                       <td>臨床微生物檢驗的資料挖掘研究－以偵測鮑氏不動桿菌之院內感染為例</td>
-                       <td>(2006.6畢業)(94學年度)</td>
-                   </tr>
-                   </tbody>
-               </table>
+            <div style="text-align: left">
+                <table class="table table-hover" style="font-size: 1.2em;">
+                    <tr>
+                        <th>學年</th>
+                        <th>系所</th>
+                        <th>姓名</th>
+                        <th>題目</th>
+                        <th>備註</th>
+                    </tr>
+                    <?php
+                    $sql = "SELECT * FROM `student`";
+                    $result = mysqli_query($conn, $sql);
+                    //            mysqli_set_charset($conn,'utf8');
+                    $total = mysqli_num_rows($result);
+                    for ($i = 0; $i < $total; $i++) {
+                        $row = mysqli_fetch_row($result);
+                        echo "<tr style='background-color: rgb(255,216,229);border: solid'>";
+                        echo "<td>$row[1]</td>";
+                        echo "<td>$row[2]</td>";
+                        echo "<td>$row[3]</td>";
+                        echo "<td>$row[4]</td>";
+                        echo "<td>$row[5]</td>";
+                        echo "</tr>";
+                    }
+                    ?>
+                </table>
             </div>
         </div>
         <div class="col-sm-4">
