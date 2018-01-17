@@ -13,6 +13,7 @@ $sql="SELECT * FROM `User` where id = '$id'";
 $result=mysqli_query($conn,$sql);
 $row=mysqli_fetch_row($result);
 $ip=get_client_ip();
+
 if($id!=null&&$pw!=null&&$row[0]==$id&&$row[2]==$pw){
     $_SESSION['id'] = $id;
     echo'Login successfully'. '<br>';
@@ -20,9 +21,9 @@ if($id!=null&&$pw!=null&&$row[0]==$id&&$row[2]==$pw){
 //    echo $id. '<br>';
 //    echo $pw. '<br>';
     echo date("h:i:sa");
-//    $sql = "insert into `Log` ( ip) values ('$ip')";
-//    $result=mysqli_query($conn,$sql);
     require_once('mailertest.php');
+    $sql = "insert into `Log` ( ip ) values ('$ip')";
+    $result=mysqli_query($conn,$sql);
     echo '<meta http-equiv=REFRESH CONTENT=1;url=control_Panel.php>';
 }
 else{
