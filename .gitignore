@@ -46,4 +46,8 @@ Network Trash Folder
 Temporary Items
 .apdisk
 mysql_connect.php
+<<<<<<< HEAD
 mailertest.php
+=======
+mailertest.php
+>>>>>>> 4c602cd2138b9d84b878e93422055bd679ec584a
